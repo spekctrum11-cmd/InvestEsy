@@ -175,7 +175,7 @@ export default function HeroSection() {
                 {services.map((service, idx) => (
                   <div key={idx} className="service-item">
                     <div className="feature-icon-wrapper" style={{ overflow: 'hidden', padding: '6px' }}>
-                      <Image src={service.img} alt={service.title} width={56} height={56} style={{ objectFit: 'contain' }} />
+                      <Image unoptimized src={service.img} alt={service.title} width={56} height={56} style={{ objectFit: 'contain' }} />
                     </div>
                     <span className="feature-title">{service.title}</span>
                   </div>
@@ -185,7 +185,7 @@ export default function HeroSection() {
                 {services.map((service, idx) => (
                   <div key={`dup-${idx}`} className="service-item">
                     <div className="feature-icon-wrapper" style={{ overflow: 'hidden', padding: '6px' }}>
-                      <Image src={service.img} alt={service.title} width={56} height={56} style={{ objectFit: 'contain' }} />
+                      <Image unoptimized src={service.img} alt={service.title} width={56} height={56} style={{ objectFit: 'contain' }} />
                     </div>
                     <span className="feature-title">{service.title}</span>
                   </div>
