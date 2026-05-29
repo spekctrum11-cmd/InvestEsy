@@ -149,7 +149,7 @@ export default function HeroSection() {
       <div className="container">
         <div className="animate-fade-in">
           <div className="badge">✨ #Simple Hassle Free Investment</div>
-          <h1 style={{ fontSize: "4.5rem", fontWeight: 800, lineHeight: 1.1, letterSpacing: "-0.04em", marginBottom: "1rem" }}>
+          <h1>
             Smart Mutual Fund<br />Investing Made Simple
           </h1>
           <p>

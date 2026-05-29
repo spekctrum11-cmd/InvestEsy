@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
 
@@ -10,6 +10,12 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: "Cointrix | AI-Powered Investing Made Simple",
   description: "Web3 Investment Landing Page with AI Assistant for smarter trading.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({

@@ -41,11 +41,13 @@
 }
 
 html {
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
 body {
   overflow-x: hidden;
+  max-width: 100vw;
   min-height: 100vh;
   color: var(--foreground);
   background: var(--background);
@@ -193,7 +195,7 @@ h6 {
 
 /* Specific Section Styles */
 .navbar {
-  padding: 0.85rem 2rem;
+  padding: 0.6rem 2rem;
   position: fixed;
   top: 1.5rem;
   left: 50%;
@@ -212,7 +214,7 @@ h6 {
 
 .navbar.scrolled {
   background: rgba(255, 255, 255, 0.9);
-  padding: 0.75rem 2rem;
+  padding: 0.5rem 2rem;
   top: 0;
   width: 100%;
   max-width: 100%;
@@ -225,12 +227,17 @@ h6 {
 .navbar .nav-links {
   display: flex;
   gap: 2rem;
-  font-weight: 500;
+  font-weight: 400;
+  font-size: 0.875rem;
   color: var(--text-muted);
 }
 
 .navbar .nav-links a:hover {
   color: var(--primary);
+}
+
+.mobile-toggle {
+  display: none;
 }
 
 .hero-bg-wrapper {
@@ -245,9 +252,8 @@ h6 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('/hero-background.png') top / 100% auto no-repeat;
+  background: url('/hero-background.png') center top / cover no-repeat;
   opacity: 0.8;
-  /* Adjust opacity if it's too dark/light */
   z-index: -1;
 }
 
@@ -257,8 +263,11 @@ h6 {
 }
 
 .hero h1 {
-  font-size: 3.5rem;
-  margin-bottom: 1.5rem;
+  font-size: clamp(2.5rem, 5vw + 1rem, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  margin-bottom: 1rem;
   color: var(--foreground);
   max-width: 800px;
   margin-inline: auto;
@@ -504,13 +513,9 @@ h6 {
   animation: fadeIn 0.8s ease forwards;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .hero {
     padding: 8rem 0 3rem;
-  }
-
-  .hero h1 {
-    font-size: 2.5rem;
   }
 
   .dashboard-mockup {
@@ -525,6 +530,50 @@ h6 {
 
   .navbar .nav-links {
     display: none;
+  }
+  
+  .navbar .nav-links.mobile-open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 1.5rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 1rem 1rem;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .navbar .nav-actions {
+    display: none; /* Hide desktop buttons on mobile by default */
+  }
+
+  .navbar .nav-links.mobile-open .nav-actions-mobile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .navbar .nav-actions-mobile .btn {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .mobile-toggle {
+    display: block !important;
+    font-size: 1.5rem;
+    background: transparent;
+    border: none;
+    color: var(--foreground);
+    cursor: pointer;
   }
 
   /* Elite Glass Panel Mobile Fixes */
@@ -608,6 +657,26 @@ h6 {
 
 .nav-item .dropdown a:last-child {
   border-bottom: none;
+}
+
+@media (max-width: 1024px) {
+  .nav-item .dropdown {
+    position: static;
+    box-shadow: none;
+    background: transparent;
+    border: none;
+    padding-left: 1rem;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    display: none;
+  }
+
+  .nav-item:hover .dropdown,
+  .nav-item:active .dropdown,
+  .nav-item:focus-within .dropdown {
+    display: flex;
+  }
 }
 
 /* Advanced Feature Card Animations */
@@ -737,6 +806,36 @@ h6 {
 }
 
 /* Elite Glass Panel (For iframe table) - True Dark macOS Style */
+.mf-panel-body {
+  overflow: hidden;
+  height: 520px;
+}
+.mf-iframe-wrapper {
+  width: 125%;
+  transform: scale(0.8);
+  transform-origin: top left;
+}
+.mf-iframe {
+  width: 100%;
+  height: 650px;
+}
+
+@media (max-width: 768px) {
+  .mf-panel-body {
+    height: 850px; /* Taller on mobile so bottom content shows */
+  }
+  .mf-iframe-wrapper {
+    width: 100%;
+    transform: none; /* Do not scale down on mobile, let it scroll or fit natively */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .mf-iframe {
+    width: 800px; /* Force minimum width to prevent table squishing */
+    height: 900px; /* Taller content area */
+  }
+}
+
 .elite-glass-panel {
   background: rgba(28, 28, 30, 0.85);
   /* Dark macOS background */
