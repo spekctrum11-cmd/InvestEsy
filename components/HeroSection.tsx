@@ -12,7 +12,7 @@ export default function HeroSection() {
     let isDragging = false;
     let startX: number;
     let scrollLeftStart: number;
-    
+
     // Inertia variables
     let velocity = 0;
     let lastMouseX = 0;
@@ -32,7 +32,7 @@ export default function HeroSection() {
           if (Math.abs(velocity) > 0.1) {
             scrollRef.current.scrollLeft += velocity;
             velocity *= 0.95; // Friction coefficient
-          } 
+          }
           // If no momentum and not hovering, do the default auto-scroll
           else if (!isHovered) {
             scrollRef.current.scrollLeft += 0.5; // Base auto-scroll speed
@@ -45,8 +45,8 @@ export default function HeroSection() {
     animationFrameId = requestAnimationFrame(scroll);
 
     const handleInteractStart = () => { isHovered = true; };
-    const handleInteractEnd = () => { 
-      isHovered = false; 
+    const handleInteractEnd = () => {
+      isHovered = false;
       isDragging = false;
       if (scrollRef.current) scrollRef.current.classList.remove('is-dragging');
     };
@@ -57,7 +57,7 @@ export default function HeroSection() {
       isHovered = true;
       startX = e.pageX - scrollRef.current.offsetLeft;
       scrollLeftStart = scrollRef.current.scrollLeft;
-      
+
       // Reset inertia
       velocity = 0;
       lastMouseX = e.pageX;
@@ -87,7 +87,7 @@ export default function HeroSection() {
     const handleMouseMove = (e: MouseEvent) => {
       if (!isDragging || !scrollRef.current) return;
       e.preventDefault();
-      
+
       const now = performance.now();
       const dt = now - lastTime;
       const dx = e.pageX - lastMouseX;
@@ -113,7 +113,7 @@ export default function HeroSection() {
       currentRef.addEventListener('mousedown', handleMouseDown);
       window.addEventListener('mouseup', handleMouseUp);
       currentRef.addEventListener('mousemove', handleMouseMove);
-      
+
       currentRef.addEventListener('touchstart', handleInteractStart);
       currentRef.addEventListener('touchend', handleInteractEnd);
     }
@@ -126,7 +126,7 @@ export default function HeroSection() {
         currentRef.removeEventListener('mousedown', handleMouseDown);
         window.removeEventListener('mouseup', handleMouseUp);
         currentRef.removeEventListener('mousemove', handleMouseMove);
-        
+
         currentRef.removeEventListener('touchstart', handleInteractStart);
         currentRef.removeEventListener('touchend', handleInteractEnd);
       }
@@ -153,7 +153,7 @@ export default function HeroSection() {
             Smart Mutual Fund<br />Investing Made Simple
           </h1>
           <p>
-            Maximize returns and limit risk. Invest Esy gives you complete visibility,
+            Maximize returns and limit risk. InvestEsy gives you complete visibility,
             adaptive strategies, and predictive control.
           </p>
           <div className="flex justify-center gap-4" style={{ marginBottom: '3rem' }}>
@@ -162,7 +162,7 @@ export default function HeroSection() {
 
           {/* Integrated Services Marquee */}
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-            <motion.div 
+            <motion.div
               ref={scrollRef}
               className="single-feature-card marquee-wrapper"
               initial={{ opacity: 0, y: 20 }}

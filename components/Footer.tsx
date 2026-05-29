@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="investesy-footer">
       <div className="container">
         <div className="footer-grid">
-          
+
           {/* Column 1: Branding & Registration */}
           <div className="footer-col">
             <div className="footer-logo">
@@ -62,7 +62,7 @@ export default function Footer() {
                 <span className="icon">✉️</span> care@investesy.in
               </p>
             </div>
-            
+
             <div className="footer-socials mt-6">
               <Link href="#" className="social-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
@@ -84,7 +84,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="footer-bottom">
           <div className="copyright">
-            ©2023 Copyright Invest Esy (Real Fincorp Private Limited) All Rights Reserved.
+            ©2023 Copyright InvestEsy (Real Fincorp Private Limited) All Rights Reserved.
           </div>
           <div className="legal-links">
             <Link href="#">Disclaimer</Link>
