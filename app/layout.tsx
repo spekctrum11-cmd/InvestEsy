@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
 
-export const runtime = 'edge';
-
 const outfit = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
