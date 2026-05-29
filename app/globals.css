@@ -822,13 +822,15 @@ h6 {
 
 @media (max-width: 768px) {
   .mf-panel-body {
-    height: 850px; /* Taller on mobile so bottom content shows */
+    height: auto; /* Let it grow to fit the wrapper */
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
   }
   .mf-iframe-wrapper {
     width: 100%;
-    transform: none; /* Do not scale down on mobile, let it scroll or fit natively */
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    transform: none; /* Do not scale down on mobile */
+    /* Remove overflow-x from wrapper, put it on panel-body */
   }
   .mf-iframe {
     width: 800px; /* Force minimum width to prevent table squishing */
