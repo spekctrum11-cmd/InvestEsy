@@ -18,6 +18,8 @@ export const viewport: Viewport = {
   maximumScale: 1,
 };
 
+import Footer from "../components/Footer";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -25,7 +27,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${outfit.variable}`}>
-      <body style={{ fontFamily: "var(--font-outfit), sans-serif" }}>{children}</body>
+      <body style={{ fontFamily: "var(--font-outfit), sans-serif" }}>
+        {children}
+        <Footer />
+      </body>
     </html>
 
   );
