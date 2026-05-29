@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { useEffect, useRef } from "react";
 
 export default function HeroSection() {
@@ -175,7 +174,7 @@ export default function HeroSection() {
                 {services.map((service, idx) => (
                   <div key={idx} className="service-item">
                     <div className="feature-icon-wrapper" style={{ overflow: 'hidden', padding: '6px' }}>
-                      <Image unoptimized src={service.img} alt={service.title} width={56} height={56} style={{ objectFit: 'contain' }} />
+                      <img src={service.img} alt={service.title} style={{ width: '56px', height: '56px', objectFit: 'contain' }} />
                     </div>
                     <span className="feature-title">{service.title}</span>
                   </div>
@@ -185,7 +184,7 @@ export default function HeroSection() {
                 {services.map((service, idx) => (
                   <div key={`dup-${idx}`} className="service-item">
                     <div className="feature-icon-wrapper" style={{ overflow: 'hidden', padding: '6px' }}>
-                      <Image unoptimized src={service.img} alt={service.title} width={56} height={56} style={{ objectFit: 'contain' }} />
+                      <img src={service.img} alt={service.title} style={{ width: '56px', height: '56px', objectFit: 'contain' }} />
                     </div>
                     <span className="feature-title">{service.title}</span>
                   </div>
