@@ -1180,21 +1180,19 @@ h6 {
 
 @media (max-width: 768px) {
   .mf-panel-body {
-    height: auto;
-    overflow: auto;
-    /* Changed to fully auto to fix iOS iframe touch blocking */
-    -webkit-overflow-scrolling: touch;
+    height: 320px;
+    overflow: hidden;
   }
 
   .mf-iframe-wrapper {
-    width: 100%;
-    transform: none;
+    width: 250%;
+    transform: scale(0.4);
+    transform-origin: top left;
   }
 
   .mf-iframe {
-    width: 800px;
-    height: 900px;
-    /* Removed pointer-events: none so users can tap and interact with the table */
+    width: 100%;
+    height: 1550px;
   }
 }
 
