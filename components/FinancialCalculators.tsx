@@ -22,9 +22,11 @@ export default function FinancialCalculators() {
 
   return (
     <section className="container" style={{ position: "relative", marginTop: "3rem", marginBottom: "3rem" }}>
-      {/* Ambient glowing orbs */}
-      <div className="ambient-glow" style={{ top: "-10%", left: "-5%" }}></div>
-      <div className="ambient-glow" style={{ bottom: "-10%", right: "-5%", animationDelay: "-3s" }}></div>
+      {/* Neon Pink Aurora Effect */}
+      <div className="aurora-wrapper">
+        <div className="aurora-blob aurora-3" style={{ top: "-10%", left: "-5%", width: "45vw", height: "45vw", maxWidth: "600px", maxHeight: "600px" }}></div>
+        <div className="aurora-blob aurora-3" style={{ bottom: "-10%", right: "-5%", width: "50vw", height: "50vw", maxWidth: "700px", maxHeight: "700px", animationDelay: "-4s" }}></div>
+      </div>
 
       <div style={{ textAlign: "center", marginBottom: "2.5rem", position: "relative", zIndex: 10 }}>
         <h2 style={{ fontSize: "1.75rem", marginBottom: "0.5rem", letterSpacing: "-0.02em" }} className="text-gradient">Financial Calculators</h2>
