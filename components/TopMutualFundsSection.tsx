@@ -2,7 +2,7 @@
 
 export default function TopMutualFundsSection() {
   return (
-    <section style={{ width: "100%", maxWidth: "1100px", margin: "8rem auto 6rem", padding: "0 2rem", position: "relative" }}>
+    <section className="top-mf-section">
       {/* Aurora Background Effect */}
       <div className="aurora-wrapper">
         <div className="aurora-blob aurora-1"></div>
