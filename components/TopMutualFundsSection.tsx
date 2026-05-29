@@ -2,8 +2,15 @@
 
 export default function TopMutualFundsSection() {
   return (
-    <section style={{ width: "100%", maxWidth: "1100px", margin: "8rem auto 6rem", padding: "0 2rem" }}>
-      <div style={{ textAlign: "center", marginBottom: "4rem" }}>
+    <section style={{ width: "100%", maxWidth: "1100px", margin: "8rem auto 6rem", padding: "0 2rem", position: "relative" }}>
+      {/* Aurora Background Effect */}
+      <div className="aurora-wrapper">
+        <div className="aurora-blob aurora-1"></div>
+        <div className="aurora-blob aurora-2"></div>
+        <div className="aurora-blob aurora-3"></div>
+      </div>
+
+      <div style={{ textAlign: "center", marginBottom: "4rem", position: "relative", zIndex: 10 }}>
         <h2 style={{ fontSize: "1.75rem", marginBottom: "0.5rem", letterSpacing: "-0.02em" }} className="text-gradient">Top Mutual Funds</h2>
         <div className="animated-underline"></div>
         <p className="text-muted" style={{ marginTop: "1rem", fontSize: "1.1rem" }}>Explore elite performance across our curated selection of high-yield funds.</p>
