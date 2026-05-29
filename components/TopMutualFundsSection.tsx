@@ -23,15 +23,14 @@ export default function TopMutualFundsSection() {
             <span className="control minimize"></span>
             <span className="control expand"></span>
           </div>
-          <div className="panel-title">Investwell Market Data</div>
         </div>
 
         <div className="panel-body mf-panel-body">
           <div className="mf-iframe-wrapper">
-            <iframe 
-              src="https://www.investwell.in/updation/parameter/par_mfperform_schsort.jsp?&ht=ffffff&hbg=015FAF&bt=000000&r1=dddddd&r2=f2f2f2" 
+            <iframe
+              src="https://www.investwell.in/updation/parameter/par_mfperform_schsort.jsp?&ht=ffffff&hbg=015FAF&bt=000000&r1=dddddd&r2=f2f2f2"
               className="mf-iframe"
-              frameBorder="0" 
+              frameBorder="0"
               scrolling="no"
               style={{ display: "block", border: "none", backgroundColor: "transparent" }}
             ></iframe>

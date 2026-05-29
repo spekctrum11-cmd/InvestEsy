@@ -4,8 +4,8 @@
   --primary-light: #1e293b;
   --primary-hover: #000000;
   --secondary: #64748b;
-  --background: #f8fafc;
-  --background-gradient: linear-gradient(135deg, #f1f5f9 0%, #ffffff 100%);
+  --background: #fefdfd;
+  --background-gradient: linear-gradient(135deg, #ffffff 0%, #fefdfd 100%);
   --surface: #ffffff;
   --surface-alt: #f1f5f9;
   --foreground: #0f172a;
@@ -230,6 +230,10 @@ h6 {
   font-weight: 400;
   font-size: 0.875rem;
   color: var(--text-muted);
+}
+
+.nav-actions-mobile {
+  display: none;
 }
 
 .navbar .nav-links a:hover {
@@ -650,15 +654,56 @@ h6 {
 }
 
 .nav-item .dropdown a {
-  padding: 0.75rem 1rem;
+  padding: 0.85rem 1rem;
   color: var(--text-muted);
   border-bottom: 1px solid var(--border-light);
-  transition: background-color 0.2s, color 0.2s;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.service-icon {
+  opacity: 0.5;
+  /* Dim by default */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transform: translateX(-4px);
+  /* Slightly shifted left initially */
 }
 
 .nav-item .dropdown a:hover {
   background-color: var(--background);
-  color: var(--primary);
+  color: var(--foreground);
+  /* Text becomes darker on hover */
+  transform: translateX(2px);
+  /* Whole link nudges right slightly */
+}
+
+/* Colorful Icon Hover States */
+.nav-item .dropdown a:hover .service-icon {
+  opacity: 1;
+  transform: translateX(0);
+  /* Icon slides into place */
+}
+
+.nav-item .dropdown a:hover .icon-blue {
+  stroke: #3b82f6;
+}
+
+.nav-item .dropdown a:hover .icon-green {
+  stroke: #10b981;
+}
+
+.nav-item .dropdown a:hover .icon-pink {
+  stroke: #ec4899;
+}
+
+.nav-item .dropdown a:hover .icon-orange {
+  stroke: #f97316;
+}
+
+.nav-item .dropdown a:hover .icon-purple {
+  stroke: #8b5cf6;
 }
 
 .nav-item .dropdown a:last-child {
@@ -862,7 +907,7 @@ h6 {
   height: 30vw;
   max-width: 400px;
   max-height: 400px;
-  background: rgba(238, 94, 166, 0.432);
+  background: rgba(240, 126, 183, 0.295);
   /* Neon Pink */
   animation-delay: -2s;
 }
@@ -1467,5 +1512,152 @@ h6 {
   .hlv-form-panel,
   .hlv-results-page {
     padding: 1.5rem 1rem;
+  }
+}
+
+/* Why InvestEsy Section - Light Premium Aesthetic */
+.why-investesy-section {
+  padding: 3.5rem 0;
+  /* Reduced from 6rem */
+  background: linear-gradient(135deg, #ffffff 0%, #fefdfd 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.why-investesy-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  /* Image is exactly 40% width, anchoring to the left */
+  gap: 2rem;
+  /* Perfect structural gap between image and text */
+  align-items: flex-start;
+  /* Aligns items to the top so we can manually parallel them */
+}
+
+.why-investesy-image-col {
+  position: relative;
+}
+
+.why-image-wrapper {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  /* Fully fills its 40% structural column */
+  margin-top: 5rem;
+  /* Pushed down exactly parallel to the paragraph text */
+}
+
+.why-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.why-image-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+  pointer-events: none;
+  z-index: -1;
+  filter: blur(40px);
+}
+
+.why-title {
+  font-size: 1.5rem;
+  /* Reduced from 2.5rem */
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.5rem;
+}
+
+.why-text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  /* Reduced from 1rem to decrease overall height */
+}
+
+.why-text-content p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  /* Reduced from 1.6 to decrease height */
+  color: #475569;
+  /* Slate 600 - elegant dark gray for light theme */
+  font-weight: 400;
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.why-text-content p::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 5px;
+  height: 5px;
+  background: var(--primary);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--primary);
+}
+
+@media (max-width: 1024px) {
+  .why-investesy-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .why-image-wrapper {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto !important;
+    /* Center on mobile */
+  }
+
+  .why-title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .why-investesy-section {
+    padding: 2.5rem 0;
+    /* Tighter padding on mobile */
+  }
+
+  .why-investesy-image-col {
+    display: none;
+    /* Hide image entirely on phones */
+  }
+
+  .why-title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .why-text-content p {
+    font-size: 0.9rem;
+    /* Slightly smaller text on small screens */
+  }
+
+  .why-investesy-content-col {
+    text-align: center;
+  }
+
+  /* Ensure paragraph text is left-aligned even if content-col is centered for the title/button */
+  .why-text-content {
+    text-align: left;
+  }
+
+  /* Center the animated underline on mobile */
+  .why-investesy-content-col .animated-underline {
+    margin: 0 auto 2rem auto !important;
   }
 }
