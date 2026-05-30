@@ -2963,13 +2963,39 @@ body.mobile-menu-open .market-ticker-container {
   width: 100%;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .blog-desktop-only {
     display: grid;
   }
 
   .blog-mobile-only {
     display: none;
+  }
+}
+
+/* Tablet Sizing for Blog Feed ("Newsletter Style but Fit") */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .blog-mobile-only {
+    max-width: 760px;
+    margin: 0 auto;
+    gap: 1.5rem;
+  }
+
+  .blog-featured .blog-image-wrapper {
+    height: 340px;
+  }
+
+  .blog-featured .blog-title {
+    font-size: 1.4rem;
+  }
+
+  .blog-strip-image {
+    width: 180px;
+    min-width: 180px;
+  }
+
+  .blog-strip-content .blog-title {
+    font-size: 1.1rem;
   }
 }
 
