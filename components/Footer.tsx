@@ -28,7 +28,7 @@ export default function Footer() {
           <div className="footer-col">
             <h4 className="footer-heading">Quick Links</h4>
             <ul className="footer-links">
-              <li><Link href="#">Client Login</Link></li>
+              <li><Link href="https://investesy.investwell.app/app/#/login" target="_blank">Client Login</Link></li>
               <li><Link href="#">MF Tools</Link></li>
               <li><Link href="#">Financial Calculators</Link></li>
               <li><Link href="#">Downloads</Link></li>

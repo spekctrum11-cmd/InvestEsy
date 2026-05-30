@@ -157,7 +157,7 @@ export default function HeroSection() {
             adaptive strategies, and predictive control.
           </p>
           <div className="flex justify-center gap-4" style={{ marginBottom: '3rem' }}>
-            <button className="btn btn-primary" style={{ padding: "0.75rem 2rem", fontSize: "1.1rem" }}>Invest Now</button>
+            <a href="https://investesy.investwell.app/app/#/login" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: "0.75rem 2rem", fontSize: "1.1rem" }}>Invest Now</a>
           </div>
 
           {/* Integrated Services Marquee */}

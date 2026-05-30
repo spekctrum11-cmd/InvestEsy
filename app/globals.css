@@ -195,9 +195,9 @@ h6 {
 
 /* Specific Section Styles */
 .navbar {
-  padding: 0.6rem 2rem;
+  padding: 0.4rem 2rem;
   position: fixed;
-  top: 1.5rem;
+  top: calc(1.5rem + 46px);
   left: 50%;
   transform: translateX(-50%);
   width: calc(100% - 3rem);
@@ -206,7 +206,7 @@ h6 {
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(40px) saturate(150%);
   -webkit-backdrop-filter: blur(40px) saturate(150%);
-  border: none;
+  border: 0.1px solid #20202050;
   border-radius: var(--radius-full);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
@@ -214,11 +214,12 @@ h6 {
 
 .navbar.scrolled {
   background: rgba(255, 255, 255, 0.9);
-  padding: 0.5rem 2rem;
-  top: 0;
+  padding: 0.3rem 2rem;
+  top: 46px;
   width: 100%;
   max-width: 100%;
   border-radius: 0;
+  border: none;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(40px) saturate(200%);
   -webkit-backdrop-filter: blur(40px) saturate(200%);
@@ -226,7 +227,7 @@ h6 {
 
 .navbar .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 1.25rem;
   font-weight: 400;
   font-size: 0.875rem;
   color: var(--text-muted);
@@ -245,12 +246,104 @@ h6 {
 }
 
 .nav-logo-img {
-  height: 28px;
+  height: 22px;
   /* Decreased size for desktop readability */
   width: auto;
   display: block;
   object-fit: contain;
   transition: transform 0.3s ease;
+}
+
+.market-ticker-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 46px;
+  background: var(--primary);
+  border-bottom: 1px solid var(--primary-light);
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Solid mask to cover the TradingView logo on the right side */
+.market-ticker-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 35px;
+  height: 100%;
+  background: var(--primary);
+  z-index: 10;
+  /* pointer-events is default (auto), which blocks clicks on the logo beneath it */
+}
+
+/* Hide TradingView Copyright Link */
+.tradingview-widget-copyright {
+  display: none !important;
+}
+
+.market-ticker-anim {
+  display: flex;
+  width: max-content;
+  white-space: nowrap;
+  animation: ticker-scroll 25s linear infinite;
+}
+
+.market-ticker-anim:hover {
+  animation-play-state: paused;
+}
+
+.market-ticker-content {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  gap: 3rem;
+  padding-right: 3rem;
+}
+
+.ticker-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.ticker-name {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.ticker-up {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.ticker-down {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+.ticker-neutral {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 @media (max-width: 1024px) {
@@ -859,7 +952,7 @@ h6 {
   position: absolute;
   top: 100%;
   left: 0;
-  min-width: 200px;
+  min-width: max-content;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
@@ -871,6 +964,7 @@ h6 {
   transform: translateY(10px);
   transition: all 0.3s ease;
   z-index: 200;
+  padding: 0.5rem 0;
 }
 
 .nav-item:hover .dropdown {
@@ -879,30 +973,74 @@ h6 {
   transform: translateY(0);
 }
 
-.nav-item .dropdown a {
-  padding: 0.85rem 1rem;
+.nav-item .dropdown a,
+.dropdown-toggler {
+  padding: 0.15rem 1rem;
   color: var(--text-muted);
-  border-bottom: 1px solid var(--border-light);
+  font-size: 0.95rem;
+  font-weight: 300;
+  white-space: nowrap;
   transition: all 0.2s ease;
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.4rem;
+  background: transparent;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+}
+
+.nav-item .dropdown a {
+  justify-content: flex-start;
+}
+
+.dropdown-toggler {
+  justify-content: space-between;
 }
 
 .service-icon {
   opacity: 0.5;
-  /* Dim by default */
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   transform: translateX(-4px);
-  /* Slightly shifted left initially */
 }
 
-.nav-item .dropdown a:hover {
-  background-color: var(--background);
-  color: var(--foreground);
-  /* Text becomes darker on hover */
-  transform: translateX(2px);
-  /* Whole link nudges right slightly */
+/* Standard Premium Hover Utility */
+.nav-item .dropdown a:hover,
+.dropdown-toggler:hover {
+  background: var(--background) !important;
+  color: var(--primary) !important;
+}
+
+/* Togglable nested menus */
+.dropdown-nested-links {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.dropdown-nested-links.open {
+  max-height: 250px;
+}
+
+/* Mobile Responsiveness for Market Ticker */
+@media (max-width: 768px) {
+  .market-ticker-container {
+    height: 36px;
+  }
+  .navbar {
+    top: calc(1rem + 36px);
+  }
+  .navbar.scrolled {
+    top: 36px;
+  }
+}
+
+.nav-item .dropdown a.dropdown-nested-link {
+  padding-left: 2.25rem;
+  font-size: 0.9rem;
+  opacity: 0.85;
 }
 
 /* Colorful Icon Hover States */
@@ -2257,31 +2395,32 @@ h6 {
   .app-download-section {
     padding: 1.5rem 0 2rem 0;
   }
-  
+
   .app-download-container {
     padding: 0 1rem;
     gap: 1.5rem;
   }
-  
+
   .app-download-title {
     font-size: 1.75rem;
     margin-bottom: 0.75rem;
   }
-  
+
   .app-download-subtitle {
     font-size: 1.1rem;
     margin-bottom: 1rem;
   }
-  
+
   .app-store-buttons {
     gap: 0.75rem;
   }
-  
+
   .store-btn {
-    width: 130px; /* slightly smaller for narrow phones */
+    width: 130px;
+    /* slightly smaller for narrow phones */
     height: 44px;
   }
-  
+
   .app-download-device {
     max-height: 240px;
   }
