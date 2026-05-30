@@ -10,7 +10,7 @@ export default function MarketTicker() {
     if (containerRef.current && containerRef.current.querySelector('script')) {
       return;
     }
-    
+
     const script = document.createElement("script");
     script.src = "https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js";
     script.type = "text/javascript";
@@ -18,26 +18,15 @@ export default function MarketTicker() {
     script.innerHTML = `
       {
         "symbols": [
-          {
-            "description": "NIFTY 50",
-            "proName": "NSE:NIFTY"
-          },
-          {
-            "description": "SENSEX",
-            "proName": "BSE:SENSEX"
-          },
-          {
-            "description": "BANK NIFTY",
-            "proName": "NSE:BANKNIFTY"
-          },
-          {
-            "description": "GOLD",
-            "proName": "TVC:GOLD"
-          },
-          {
-            "description": "USD / INR",
-            "proName": "FX_IDC:USDINR"
-          }
+          { "title": "SENSEX", "proName": "BSE:SENSEX" },
+          { "title": "SILVER", "proName": "OANDA:XAGUSD" },
+          { "title": "BRENT CRUDE OIL", "proName": "TVC:UKOIL" },
+          { "title": "USD / INR", "proName": "FX_IDC:USDINR" },
+          { "title": "GOLD", "proName": "TVC:GOLD" },
+          { "title": "EUR / INR", "proName": "FX_IDC:EURINR" },
+          { "title": "GBP / INR", "proName": "FX_IDC:GBPINR" },
+          { "title": "S&P 500", "proName": "FOREXCOM:SPXUSD" },
+          { "title": "NASDAQ 100", "proName": "FOREXCOM:NSXUSD" }
         ],
         "showSymbolLogo": true,
         "isTransparent": true,
