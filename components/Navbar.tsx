@@ -27,18 +27,21 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open
+  // Lock body scroll and toggle helper class when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = "hidden";
       document.documentElement.style.overflow = "hidden";
+      document.body.classList.add("mobile-menu-open");
     } else {
       document.body.style.overflow = "";
       document.documentElement.style.overflow = "";
+      document.body.classList.remove("mobile-menu-open");
     }
     return () => { 
       document.body.style.overflow = ""; 
       document.documentElement.style.overflow = "";
+      document.body.classList.remove("mobile-menu-open");
     };
   }, [isMobileMenuOpen]);
 
