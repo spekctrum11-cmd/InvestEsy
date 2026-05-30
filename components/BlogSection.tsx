@@ -31,6 +31,8 @@ const blogs = [
 export default function BlogSection() {
   return (
     <section className="blog-section">
+      {/* Background Overlay SVG */}
+      <div className="blog-overlay-bg" />
       <div className="container">
         
         {/* Section Header */}

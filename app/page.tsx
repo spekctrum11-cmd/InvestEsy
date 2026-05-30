@@ -26,7 +26,6 @@ export default function Home() {
       <OurAssociatesSection />
       <TestimonialsSection />
       <BlogSection />
-      <div style={{ height: "4rem" }}></div>
     </main>
   );
 }

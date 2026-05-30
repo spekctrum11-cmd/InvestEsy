@@ -228,9 +228,9 @@ h6 {
 .navbar .nav-links {
   display: flex;
   gap: 1.25rem;
-  font-weight: 400;
-  font-size: 0.875rem;
-  color: var(--text-muted);
+  font-weight: 300;
+  font-size: 0.92rem;
+  color: #0f172a;
 }
 
 .nav-actions-mobile {
@@ -358,7 +358,7 @@ h6 {
 }
 
 .navbar .nav-links a:hover {
-  color: var(--primary);
+  color: #2563eb;
 }
 
 .mobile-toggle {
@@ -976,9 +976,9 @@ h6 {
 .nav-item .dropdown a,
 .dropdown-toggler {
   padding: 0.15rem 1rem;
-  color: var(--text-muted);
+  color: #1e2125;
   font-size: 0.95rem;
-  font-weight: 300;
+  font-weight: 200;
   white-space: nowrap;
   transition: all 0.2s ease;
   display: flex;
@@ -1010,7 +1010,7 @@ h6 {
 .nav-item .dropdown a:hover,
 .dropdown-toggler:hover {
   background: var(--background) !important;
-  color: var(--primary) !important;
+  color: #2563eb !important;
 }
 
 /* Togglable nested menus */
@@ -1908,11 +1908,10 @@ h6 {
   }
 }
 
-/* Why InvestEsy Section - Light Premium Aesthetic */
+/* Why InvestEsy Section - Neo-Brutalist Aesthetic */
 .why-investesy-section {
   padding: 3.5rem 0;
-  /* Reduced from 6rem */
-  background: linear-gradient(135deg, #ffffff 0%, #fefdfd 100%);
+  background: var(--background);
   position: relative;
   overflow: hidden;
 }
@@ -1921,10 +1920,8 @@ h6 {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   /* Image is exactly 40% width, anchoring to the left */
-  gap: 2rem;
-  /* Perfect structural gap between image and text */
+  gap: 2.5rem;
   align-items: flex-start;
-  /* Aligns items to the top so we can manually parallel them */
 }
 
 .why-investesy-image-col {
@@ -1933,13 +1930,18 @@ h6 {
 
 .why-image-wrapper {
   position: relative;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 6px 6px 0px rgba(15, 23, 42, 1);
+  border: 2px solid rgba(15, 23, 42, 1);
   width: 100%;
-  /* Fully fills its 40% structural column */
   margin-top: 5rem;
-  /* Pushed down exactly parallel to the paragraph text */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.why-image-wrapper:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0px rgba(15, 23, 42, 1);
 }
 
 .why-image {
@@ -1947,43 +1949,55 @@ h6 {
   height: auto;
   display: block;
   object-fit: cover;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: none;
 }
 
 .why-image-glow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 120%;
-  height: 120%;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
-  pointer-events: none;
-  z-index: -1;
-  filter: blur(40px);
+  display: none;
+}
+
+.why-title-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0.5rem;
 }
 
 .why-title {
   font-size: 1.5rem;
-  /* Reduced from 2.5rem */
   font-weight: 800;
   letter-spacing: -0.03em;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.why-title-bg-svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 185%;
+  height: 210%;
+  rotate: -5deg;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.why-investesy-content-col .animated-underline {
+  position: relative;
+  z-index: 3;
 }
 
 .why-text-content {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  /* Reduced from 1rem to decrease overall height */
 }
 
 .why-text-content p {
   font-size: 0.95rem;
   line-height: 1.5;
-  /* Reduced from 1.6 to decrease height */
   color: #475569;
-  /* Slate 600 - elegant dark gray for light theme */
   font-weight: 400;
   position: relative;
   padding-left: 1.25rem;
@@ -1994,11 +2008,12 @@ h6 {
   position: absolute;
   left: 0;
   top: 0.5rem;
-  width: 5px;
-  height: 5px;
-  background: var(--primary);
-  border-radius: 50%;
-  box-shadow: 0 0 8px var(--primary);
+  width: 7px;
+  height: 7px;
+  background: #fde047;
+  /* bright yellow accent */
+  border: 1.5px solid rgba(15, 23, 42, 1);
+  border-radius: 2px;
 }
 
 @media (max-width: 1024px) {
@@ -2350,6 +2365,36 @@ h6 {
   z-index: 5;
 }
 
+.phone-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.phone-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 72%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  rotate: -20deg;
+  height: 120%;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="M 46.88 33.32 C 45.21 38.49 40.91 42.49 37.89 45.46 C 34.87 48.43 32.22 49.42 26.85 49.52 C 21.48 49.61 17.17 44.72 14.30 41.47 C 11.43 38.21 8.90 38.12 5.47 33.26 C 2.03 28.39 0.26 21.08 2.20 17.04 C 4.15 12.99 6.80 11.37 11.40 8.63 C 16.01 5.88 19.83 3.33 24.47 1.49 C 29.11 -0.35 35.30 1.17 38.03 4.44 C 40.75 7.71 40.94 8.94 42.52 15.39 C 44.10 21.84 48.55 28.14 46.88 33.32 Z" fill="%23bae6fd"></path></svg>') no-repeat center center;
+  background-size: contain;
+  z-index: -1;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .phone-container::before {
+    top: 57%;
+    left: 60%;
+  }
+}
+
 .app-download-device {
   max-width: 100%;
   height: auto;
@@ -2690,11 +2735,36 @@ h6 {
   padding: 2rem 1rem 4rem 1rem;
   background: var(--background);
   position: relative;
+  overflow: hidden;
 }
 
 @media (min-width: 1024px) {
   .blog-section {
     padding: 3rem 2rem 5rem 2rem;
+  }
+}
+
+.blog-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.blog-overlay-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 45%;
+  background: url('/overlay.svg') no-repeat bottom center;
+  background-size: 100% auto;
+  z-index: 1;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .blog-overlay-bg {
+    height: 140px;
   }
 }
 

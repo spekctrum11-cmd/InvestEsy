@@ -20,7 +20,9 @@ export default function AppDownloadSection() {
           </div>
         </div>
         <div className="app-download-image-wrapper">
-          <img src="/deviceWithApplication.png" alt="InvestEsy Mobile App" className="app-download-device" />
+          <div className="phone-container">
+            <img src="/deviceWithApplication.png" alt="InvestEsy Mobile App" className="app-download-device" />
+          </div>
         </div>
       </div>
     </section>
