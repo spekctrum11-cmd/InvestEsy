@@ -46,6 +46,7 @@ export default function OurAssociatesSection() {
           filter: grayscale(100%);
           opacity: 0.6;
           transition: all 0.3s ease;
+          cursor: pointer;
         }
         .associates-logo:hover {
           filter: grayscale(0%);

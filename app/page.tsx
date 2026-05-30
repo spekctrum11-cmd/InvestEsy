@@ -7,6 +7,8 @@ import FinancialCalculators from "../components/FinancialCalculators";
 import WhyInvestEsy from "../components/WhyInvestEsy";
 import AppDownloadSection from "../components/AppDownloadSection";
 import OurAssociatesSection from "../components/OurAssociatesSection";
+import TestimonialsSection from "../components/TestimonialsSection";
+import BlogSection from "../components/BlogSection";
 
 export default function Home() {
   return (
@@ -22,6 +24,8 @@ export default function Home() {
       <WhyInvestEsy />
       <AppDownloadSection />
       <OurAssociatesSection />
+      <TestimonialsSection />
+      <BlogSection />
       <div style={{ height: "4rem" }}></div>
     </main>
   );
