@@ -43,8 +43,8 @@ export default function Footer() {
               <li><Link href="#">Blog</Link></li>
               <li><Link href="#">Gallery</Link></li>
               <li><Link href="#">Awards</Link></li>
-              <li><Link href="#">Career</Link></li>
-              <li><Link href="#">Key Management</Link></li>
+              <li><Link href="/career">Career</Link></li>
+              <li><Link href="/key-management">Key Management</Link></li>
             </ul>
           </div>
 

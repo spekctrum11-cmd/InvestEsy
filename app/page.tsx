@@ -9,6 +9,7 @@ import AppDownloadSection from "../components/AppDownloadSection";
 import OurAssociatesSection from "../components/OurAssociatesSection";
 import TestimonialsSection from "../components/TestimonialsSection";
 import BlogSection from "../components/BlogSection";
+import Ecosystem from "../components/Ecosystem";
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
       <OurAssociatesSection />
       <TestimonialsSection />
       <BlogSection />
+      <Ecosystem />
     </main>
   );
 }
