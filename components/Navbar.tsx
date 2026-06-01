@@ -116,7 +116,7 @@ export default function Navbar() {
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="service-icon icon-orange"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="14.01"/><line x1="12" y1="14" x2="12" y2="14.01"/><line x1="8" y1="14" x2="8" y2="14.01"/><line x1="16" y1="10" x2="16" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="8" y1="10" x2="8" y2="10.01"/></svg>
               Financial Calculators
             </Link>
-            <Link href="https://investesy.in/past-sip-performance/" className="service-link">
+            <Link href="/past-sip-performance" className="service-link">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="service-icon icon-blue"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
               MF Tools
             </Link>
@@ -219,7 +219,7 @@ export default function Navbar() {
       </div>
 
       <div className="flex gap-4 items-center nav-actions">
-        <Link href="https://investesy.in/become-a-partner/" className="btn btn-outline" style={{ padding: "0.5rem 1rem", fontSize: "0.875rem" }}>Become a Partner</Link>
+        <Link href="/become-a-partner" className="btn btn-outline" style={{ padding: "0.5rem 1rem", fontSize: "0.875rem" }}>Become a Partner</Link>
         <Link href="https://investesy.investwell.app/app/#/login" target="_blank" className="btn btn-primary" style={{ padding: "0.5rem 1.5rem" }}>Client Login</Link>
       </div>
 
@@ -291,7 +291,7 @@ export default function Navbar() {
             <div className={`mobile-sub-menu ${isInvestorZoneOpen ? "open" : ""}`}>
               <Link href="https://investesy.in/educational-videos/" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>Educational Videos</Link>
               <Link href="https://investesy.in/sip-calculator/" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>Financial Calculators</Link>
-              <Link href="https://investesy.in/past-sip-performance/" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>MF Tools</Link>
+              <Link href="/past-sip-performance" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>MF Tools</Link>
               <Link href="https://investesy.in/mf-forms/" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>Downloads</Link>
               <Link href="https://investesy.in/principles-of-investing/" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>Principles of Investing</Link>
               <Link href="https://investesy.in/open-free-demat-account/" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>Open Free Demat Account</Link>
@@ -351,7 +351,7 @@ export default function Navbar() {
 
           {/* CTA Buttons */}
           <div className="mobile-cta-section" style={{ marginTop: "1.5rem" }}>
-            <Link href="https://investesy.in/become-a-partner/" className="btn btn-outline mobile-cta-btn" onClick={() => setIsMobileMenuOpen(false)}>Become a Partner</Link>
+            <Link href="/become-a-partner" className="btn btn-outline mobile-cta-btn" onClick={() => setIsMobileMenuOpen(false)}>Become a Partner</Link>
             <Link href="https://investesy.investwell.app/app/#/login" target="_blank" className="btn btn-primary mobile-cta-btn" onClick={() => setIsMobileMenuOpen(false)}>Client Login</Link>
           </div>
         </div>

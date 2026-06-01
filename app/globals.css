@@ -33,11 +33,11 @@
   --transition-normal: 300ms ease;
 }
 
-/* Reset and Base Styles */
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23FFF' stroke='%23000' stroke-width='2' d='M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.87a.5.5 0 0 0 .35-.85L6.35 2.85a.5.5 0 0 0-.85.35Z'%3E%3C/path%3E%3C/svg%3E") 5 3, auto;
 }
 
 html {
@@ -55,6 +55,24 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
+}
+
+a,
+button,
+[role="button"],
+input[type="submit"],
+input[type="button"],
+select {
+  cursor: pointer;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+textarea,
+[contenteditable] {
+  cursor: text;
 }
 
 a {
@@ -3073,4 +3091,64 @@ body.mobile-menu-open .market-ticker-container {
 
 .blog-strip-content .blog-read-more {
   font-size: 0.8rem;
+}
+
+/* MF Tools Page Layout */
+.mf-tools-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.mf-sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.mf-sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1.2rem;
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all var(--transition-normal);
+  border: 1px solid transparent;
+}
+
+.mf-sidebar-link:hover {
+  color: var(--primary);
+  background: rgba(15, 23, 42, 0.03);
+  transform: translateX(4px);
+}
+
+.mf-sidebar-link.active {
+  color: var(--primary);
+  background: rgba(15, 23, 42, 0.05);
+  border-left: 3px solid var(--primary);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  font-weight: 600;
+}
+
+@media (max-width: 991px) {
+  .mf-tools-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .mf-sidebar-link:hover {
+    transform: none;
+  }
+}
+
+/* About Us Page */
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
 }

@@ -8,7 +8,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Cointrix | AI-Powered Investing Made Simple",
+  title: "InvestEsy | Investing Made Simple",
   description: "Web3 Investment Landing Page with AI Assistant for smarter trading.",
 };
 
