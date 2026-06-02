@@ -4,9 +4,8 @@ import React from "react";
 import MarketTicker from "@/components/MarketTicker";
 import Navbar from "@/components/Navbar";
 import MFToolsSidebar from "@/components/MFToolsSidebar";
-import PastSipCalculator from "@/components/PastSipCalculator";
 
-export default function PastSipPerformance() {
+export default function SchemeComparison() {
   return (
     <main style={{ background: "var(--background)" }}>
       <MarketTicker />
@@ -18,7 +17,7 @@ export default function PastSipPerformance() {
           <div className="about-banner-overlay">
             <div className="about-banner-content">
               <span className="about-badge">MF Tools</span>
-              <h1 className="about-title">Past SIP Performance</h1>
+              <h1 className="about-title">Scheme Comparison</h1>
             </div>
           </div>
         </div>
@@ -30,9 +29,16 @@ export default function PastSipPerformance() {
           {/* Left Column: Sidebar Menu */}
           <MFToolsSidebar />
 
-          {/* Right Column: Custom Past SIP Calculator */}
-          <div className="mf-custom-card" style={{ padding: "0" }}>
-            <PastSipCalculator />
+          {/* Right Column: InvestWell Iframe */}
+          <div className="mf-iframe-card" style={{ '--iframe-height-desktop': '350px', '--iframe-height-mobile': '400px' } as any}>
+            <iframe
+              src="https://investwell.in/updation/parameter/par_fund_compare_big.jsp?hbg=cccccc&ht=111111&bt=222222&ff=verdana&fs=12"
+              width="100%"
+              frameBorder="0"
+              scrolling="auto"
+              className="mf-iframe"
+              title="Scheme Comparison"
+            />
           </div>
         </div>
       </section>

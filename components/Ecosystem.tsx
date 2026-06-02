@@ -117,8 +117,8 @@ export default function Ecosystem() {
                 <div className="eco-line line-br"></div>
               </div>
               <div className="eco-meta">
-                <div className="eco-icon"><span role="img" aria-label="credit">💳</span></div>
-                <span>Credit<br />Solutions</span>
+                <div className="eco-icon"><span role="img" aria-label="loan">💸</span></div>
+                <span>Loan<br />Solutions</span>
               </div>
             </div>
           </div>

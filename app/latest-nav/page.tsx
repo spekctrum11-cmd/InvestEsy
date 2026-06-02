@@ -4,9 +4,8 @@ import React from "react";
 import MarketTicker from "@/components/MarketTicker";
 import Navbar from "@/components/Navbar";
 import MFToolsSidebar from "@/components/MFToolsSidebar";
-import PastSipCalculator from "@/components/PastSipCalculator";
 
-export default function PastSipPerformance() {
+export default function LatestNav() {
   return (
     <main style={{ background: "var(--background)" }}>
       <MarketTicker />
@@ -18,7 +17,7 @@ export default function PastSipPerformance() {
           <div className="about-banner-overlay">
             <div className="about-banner-content">
               <span className="about-badge">MF Tools</span>
-              <h1 className="about-title">Past SIP Performance</h1>
+              <h1 className="about-title">Latest NAV</h1>
             </div>
           </div>
         </div>
@@ -30,9 +29,16 @@ export default function PastSipPerformance() {
           {/* Left Column: Sidebar Menu */}
           <MFToolsSidebar />
 
-          {/* Right Column: Custom Past SIP Calculator */}
-          <div className="mf-custom-card" style={{ padding: "0" }}>
-            <PastSipCalculator />
+          {/* Right Column: InvestWell Iframe */}
+          <div className="mf-iframe-card" style={{ '--iframe-height-desktop': '400px', '--iframe-height-mobile': '450px' } as any}>
+            <iframe
+              src="https://www.investwell.in/updation/parameter/par_latest_nav.jsp?src=2&hbg=cccccc&ht=111111&bt=222222&r1=eeeeee&r2=f1f1f1&fs=11"
+              width="100%"
+              frameBorder="0"
+              scrolling="auto"
+              className="mf-iframe"
+              title="Latest NAV"
+            />
           </div>
         </div>
       </section>

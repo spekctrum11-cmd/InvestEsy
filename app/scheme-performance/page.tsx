@@ -4,9 +4,8 @@ import React from "react";
 import MarketTicker from "@/components/MarketTicker";
 import Navbar from "@/components/Navbar";
 import MFToolsSidebar from "@/components/MFToolsSidebar";
-import PastSipCalculator from "@/components/PastSipCalculator";
 
-export default function PastSipPerformance() {
+export default function SchemePerformance() {
   return (
     <main style={{ background: "var(--background)" }}>
       <MarketTicker />
@@ -18,7 +17,7 @@ export default function PastSipPerformance() {
           <div className="about-banner-overlay">
             <div className="about-banner-content">
               <span className="about-badge">MF Tools</span>
-              <h1 className="about-title">Past SIP Performance</h1>
+              <h1 className="about-title">Scheme Performance</h1>
             </div>
           </div>
         </div>
@@ -30,9 +29,17 @@ export default function PastSipPerformance() {
           {/* Left Column: Sidebar Menu */}
           <MFToolsSidebar />
 
-          {/* Right Column: Custom Past SIP Calculator */}
-          <div className="mf-custom-card" style={{ padding: "0" }}>
-            <PastSipCalculator />
+          {/* Right Column: InvestWell Iframe */}
+          <div className="mf-iframe-card">
+            <iframe
+              src="https://www.investwell.in/updation/parameter/par_mfperform_schsort.jsp?&ht=ffffff&hbg=015FAF&bt=000000&r1=dddddd&r2=f2f2f2"
+              width="100%"
+              height="800"
+              frameBorder="0"
+              scrolling="auto"
+              className="mf-iframe"
+              title="Scheme Performance"
+            />
           </div>
         </div>
       </section>

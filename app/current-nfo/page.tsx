@@ -4,9 +4,9 @@ import React from "react";
 import MarketTicker from "@/components/MarketTicker";
 import Navbar from "@/components/Navbar";
 import MFToolsSidebar from "@/components/MFToolsSidebar";
-import PastSipCalculator from "@/components/PastSipCalculator";
+import CurrentNfoList from "@/components/CurrentNfoList";
 
-export default function PastSipPerformance() {
+export default function CurrentNfo() {
   return (
     <main style={{ background: "var(--background)" }}>
       <MarketTicker />
@@ -18,7 +18,7 @@ export default function PastSipPerformance() {
           <div className="about-banner-overlay">
             <div className="about-banner-content">
               <span className="about-badge">MF Tools</span>
-              <h1 className="about-title">Past SIP Performance</h1>
+              <h1 className="about-title">Current NFO</h1>
             </div>
           </div>
         </div>
@@ -30,9 +30,9 @@ export default function PastSipPerformance() {
           {/* Left Column: Sidebar Menu */}
           <MFToolsSidebar />
 
-          {/* Right Column: Custom Past SIP Calculator */}
+          {/* Right Column: Custom Current NFO List */}
           <div className="mf-custom-card" style={{ padding: "0" }}>
-            <PastSipCalculator />
+            <CurrentNfoList />
           </div>
         </div>
       </section>

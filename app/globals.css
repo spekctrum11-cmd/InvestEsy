@@ -3115,25 +3115,29 @@ body.mobile-menu-open .market-ticker-container {
   font-size: 1.1rem;
   font-weight: 800;
   color: var(--foreground);
-  margin-bottom: 1.25rem;
-  padding-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
   border-bottom: 2px solid rgba(37, 99, 235, 0.1);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .mf-iframe-card {
-  padding: 0.5rem;
+  padding: 0;
   border-radius: 16px;
   background: var(--surface);
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
   border: 1px solid var(--border-light);
   overflow: hidden;
+  height: var(--iframe-height-desktop, 800px);
 }
 
 .mf-iframe {
   border-radius: 12px;
   display: block;
+  width: 100%;
+  height: 100%;
+  zoom: 0.75; /* Shrink the iframe's content down by 25% */
 }
 
 .mf-sidebar-menu {
@@ -3169,14 +3173,61 @@ body.mobile-menu-open .market-ticker-container {
   font-weight: 600;
 }
 
+.mf-mobile-dropdown-wrapper {
+  display: none;
+  padding: 1rem;
+  background: var(--surface);
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+}
+
+.mf-mobile-select {
+  width: 100%;
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+  background: var(--background);
+  color: var(--foreground);
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.2rem;
+}
+
 @media (max-width: 991px) {
   .mf-tools-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 
+  .mf-sidebar-card {
+    display: none !important;
+  }
+
+  .mf-mobile-dropdown-wrapper {
+    display: block;
+  }
+
   .mf-sidebar-link:hover {
     transform: none;
+  }
+
+  .mf-iframe-card {
+    height: calc(var(--iframe-height-mobile, 1400px) * 0.5) !important;
+  }
+
+  .mf-iframe {
+    width: 200%;
+    height: var(--iframe-height-mobile, 1400px) !important;
+    transform: scale(0.5);
+    transform-origin: top left;
+    zoom: normal; /* Override zoom on mobile in favor of standard transform */
   }
 }
 
