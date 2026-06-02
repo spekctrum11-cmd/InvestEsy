@@ -30,9 +30,17 @@ export default function PastSipPerformance() {
           {/* Left Column: Sidebar Menu */}
           <MFToolsSidebar />
 
-          {/* Right Column: Custom Past SIP Calculator */}
-          <div className="mf-custom-card" style={{ padding: "0" }}>
-            <PastSipCalculator />
+          {/* Right Column: InvestWell Iframe */}
+          <div className="mf-iframe-card">
+            <iframe
+              src="https://www.investwell.in/updation/parameter/par_mfperform_sip.jsp?&ht=ffffff&hbg=015FAF&bt=000000&r1=dddddd&r2=f2f2f2"
+              width="100%"
+              height="800"
+              frameBorder="0"
+              scrolling="auto"
+              className="mf-iframe"
+              title="Past SIP Performance"
+            />
           </div>
         </div>
       </section>
