@@ -4165,7 +4165,9 @@ body.mobile-menu-open .market-ticker-container {
   .partner-slider-slide h1 {
     margin-bottom: 0.2rem !important;
   }
-}/* Become a Partner Page Refactor */
+}
+
+/* Become a Partner Page Refactor */
 .bp-main-wrapper {
   background: var(--background);
 }
@@ -4576,19 +4578,23 @@ body.mobile-menu-open .market-ticker-container {
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
 @media (max-width: 500px) {
   .bp-hero-title {
     font-size: clamp(0.85rem, 4vw, 1.1rem) !important;
     margin-bottom: 0.2rem !important;
   }
+
   .bp-hero-subtitle {
     font-size: clamp(0.55rem, 2.5vw, 0.75rem) !important;
     line-height: 1.3 !important;
   }
+
   .bp-hero-badge {
     display: none !important;
   }
 }
+
 /* Gallery Styles */
 .gallery-masonry {
   column-count: 3;
@@ -4673,6 +4679,7 @@ body.mobile-menu-open .market-ticker-container {
 .gallery-image-wrapper:hover .gallery-icon {
   transform: scale(1);
 }
+
 /* Bento Gallery Override Styles */
 .gallery-bento {
   display: grid;
@@ -4790,6 +4797,7 @@ body.mobile-menu-open .market-ticker-container {
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
 .lightbox-btn:hover {
   background: rgba(255, 255, 255, 0.25);
   transform: scale(1.05);

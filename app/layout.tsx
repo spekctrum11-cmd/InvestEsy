@@ -10,6 +10,9 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: "InvestEsy | Investing Made Simple",
   description: "Web3 Investment Landing Page with AI Assistant for smarter trading.",
+  icons: {
+    icon: "/favicon.png",
+  }
 };
 
 export const viewport: Viewport = {
