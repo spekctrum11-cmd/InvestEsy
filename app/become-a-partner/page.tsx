@@ -442,6 +442,18 @@ export default function BecomeAPartner() {
                 exit={{ opacity: -20, x: 0 }}
                 transition={{ duration: 0.4 }}
                 className="t-card bp-testi-card"
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={1}
+                onDragEnd={(e, { offset }) => {
+                  if (offset.x < -50) {
+                    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+                  } else if (offset.x > 50) {
+                    setCurrentTestimonial((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+                  }
+                }}
+                onClick={() => setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)}
+                style={{ cursor: "pointer", touchAction: "pan-y" }}
               >
                 <span className="t-quote-mark bp-testi-quote">"</span>
 
