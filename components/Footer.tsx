@@ -41,8 +41,8 @@ export default function Footer() {
             <h4 className="footer-heading">Quick Links</h4>
             <ul className="footer-links">
               <li><Link href="#">Blog</Link></li>
-              <li><Link href="#">Gallery</Link></li>
-              <li><Link href="#">Awards</Link></li>
+              <li><Link href="/gallery">Gallery</Link></li>
+              <li><Link href="/awards">Awards</Link></li>
               <li><Link href="/career">Career</Link></li>
               <li><Link href="/key-management">Key Management</Link></li>
             </ul>
