@@ -3,9 +3,9 @@
 import React from "react";
 import MarketTicker from "@/components/MarketTicker";
 import Navbar from "@/components/Navbar";
-import MFToolsSidebar from "@/components/MFToolsSidebar";
+import DownloadsSidebar from "@/components/DownloadsSidebar";
 
-export default function SchemePerformance() {
+export default function KycFatcaForms() {
   return (
     <main style={{ background: "var(--background)" }}>
       <MarketTicker />
@@ -16,31 +16,28 @@ export default function SchemePerformance() {
         <div className="about-banner">
           <div className="about-banner-overlay">
             <div className="about-banner-content">
-              <span className="about-badge">MF Tools</span>
-              <h1 className="about-title">Scheme Performance</h1>
+              <span className="about-badge">Downloads</span>
+              <h1 className="about-title">KYC/ FATCA Forms</h1>
             </div>
           </div>
         </div>
       </div>
 
       {/* Main Content Layout */}
-      <section className="container" style={{
-        paddingBottom: '4rem', paddingTop: '2rem'
-      }}>
+      <section className="container" style={{ paddingBottom: '4rem', paddingTop: '2rem' }}>
         <div className="mf-tools-grid">
           {/* Left Column: Sidebar Menu */}
-          <MFToolsSidebar />
+          <DownloadsSidebar />
 
           {/* Right Column: InvestWell Iframe */}
-          <div className="mf-iframe-card">
+          <div style={{ background: "#ffffff", borderRadius: "12px", padding: "1rem", boxShadow: "0 10px 30px -10px rgba(0, 0, 0, 0.05)" }}>
             <iframe
-              src="https://www.investwell.in/updation/parameter/par_mfperform_schsort.jsp?&ht=ffffff&hbg=015FAF&bt=000000&r1=dddddd&r2=f2f2f2"
+              src="https://www.investwell.in/updation/parameter/par_kyc.jsp?hbg=cccccc&fs=12&bt=222222&ht=111111"
               width="100%"
-              height="800"
+              height="600"
               frameBorder="0"
               scrolling="auto"
-              className="mf-iframe"
-              title="Scheme Performance"
+              title="KYC/ FATCA Forms"
             />
           </div>
         </div>

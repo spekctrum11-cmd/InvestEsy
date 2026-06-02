@@ -21,7 +21,7 @@ export default function FinancialCalculators() {
   const [activeTab, setActiveTab] = useState(calculators[0]);
 
   return (
-    <section className="container" style={{ position: "relative", marginTop: "3rem", marginBottom: "0", zIndex: 20 }}>
+    <section id="financial-calculators" className="container" style={{ position: "relative", marginTop: "3rem", marginBottom: "0", zIndex: 20 }}>
       {/* Neon Pink Aurora Effect */}
       <div className="aurora-wrapper">
         <div className="aurora-blob aurora-3" style={{ top: "0%", left: "-5%", bottom: "auto", right: "auto", width: "45vw", height: "45vw", maxWidth: "600px", maxHeight: "600px" }}></div>
