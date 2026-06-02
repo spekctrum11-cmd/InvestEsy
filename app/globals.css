@@ -3645,6 +3645,7 @@ body.mobile-menu-open .market-ticker-container {
   background: #f8fbff;
   overflow: hidden;
   font-family: var(--font-outfit), sans-serif;
+  border-top: 1px solid #8a8888;
 }
 
 .eco-container {
