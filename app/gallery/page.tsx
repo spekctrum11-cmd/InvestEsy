@@ -126,7 +126,7 @@ export default function GalleryPage() {
               >
                 <div className="gallery-image-wrapper-bento">
                   <img 
-                    src={`/gallery/${src}`} 
+                    src={`/Gallery/${src}`} 
                     alt={`Real Fincorp Gallery ${index + 1}`} 
                     loading="lazy"
                     className="gallery-img-bento"
@@ -218,7 +218,7 @@ export default function GalleryPage() {
                 animate={{ scale: zoomLevel, opacity: 1 }}
                 exit={{ scale: 0.9, opacity: 0 }}
                 transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                src={`/gallery/${selectedImage}`}
+                src={`/Gallery/${selectedImage}`}
                 alt="Fullscreen view"
                 style={{
                   maxWidth: "90vw",
