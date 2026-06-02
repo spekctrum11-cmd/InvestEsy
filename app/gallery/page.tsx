@@ -20,9 +20,9 @@ const locations = [
 ];
 
 const itemTypes = [
-  "large", "standard", "standard", "wide", "standard", 
-  "standard", "wide", "standard", "large", "standard", 
-  "wide", "standard", "standard", "large", "standard", 
+  "large", "standard", "standard", "wide", "standard",
+  "standard", "wide", "standard", "large", "standard",
+  "wide", "standard", "standard", "large", "standard",
   "wide", "standard", "standard", "wide", "standard"
 ];
 
@@ -34,7 +34,7 @@ export default function GalleryPage() {
     e.stopPropagation();
     setZoomLevel(prev => Math.min(prev + 0.5, 3));
   };
-  
+
   const handleZoomOut = (e: React.MouseEvent) => {
     e.stopPropagation();
     setZoomLevel(prev => Math.max(prev - 0.5, 1));
@@ -67,10 +67,10 @@ export default function GalleryPage() {
       <MarketTicker />
       <div className="hero-bg-wrapper">
         <Navbar />
-        
+
         {/* Gallery Header */}
-        <div style={{ paddingTop: "140px", paddingBottom: "60px", textAlign: "center", position: "relative", zIndex: 1, paddingInline: "1.5rem" }}>
-          <motion.span 
+        <div style={{ paddingTop: "140px", paddingBottom: "30px", textAlign: "center", position: "relative", zIndex: 1, paddingInline: "clamp(1.5rem, 12vw, 15rem)" }}>
+          <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             style={{
@@ -89,7 +89,7 @@ export default function GalleryPage() {
           >
             Our Memories
           </motion.span>
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
@@ -98,7 +98,7 @@ export default function GalleryPage() {
           >
             Moments & Milestones
           </motion.h1>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -110,7 +110,7 @@ export default function GalleryPage() {
       </div>
 
       {/* Gallery Grid */}
-      <section className="container" style={{ paddingBottom: "6rem", paddingInline: "1.5rem" }}>
+      <section className="container" style={{ paddingBottom: "3rem", paddingInline: "clamp(1.5rem, 12vw, 15rem)" }}>
         <div className="gallery-bento">
           {images.map((src, index) => {
             const itemType = itemTypes[index % itemTypes.length];
@@ -125,16 +125,16 @@ export default function GalleryPage() {
                 onClick={() => setSelectedImage(src)}
               >
                 <div className="gallery-image-wrapper-bento">
-                  <img 
-                    src={`/Gallery/${src}`} 
-                    alt={`Real Fincorp Gallery ${index + 1}`} 
+                  <img
+                    src={`/Gallery/${src}`}
+                    alt={`Real Fincorp Gallery ${index + 1}`}
                     loading="lazy"
                     className="gallery-img-bento"
                   />
 
                   <div className="gallery-overlay-bento">
                     <div className="gallery-icon-bento">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" /></svg>
                     </div>
                   </div>
 

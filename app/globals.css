@@ -4676,17 +4676,15 @@ body.mobile-menu-open .market-ticker-container {
 /* Bento Gallery Override Styles */
 .gallery-bento {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  grid-auto-rows: 200px;
-  grid-auto-flow: dense;
-  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
 }
 
 .gallery-item-bento {
   position: relative;
   border-radius: 16px;
   overflow: hidden;
-  height: 100%;
+  aspect-ratio: 3 / 2;
 }
 
 .gallery-image-wrapper-bento {
@@ -4710,6 +4708,7 @@ body.mobile-menu-open .market-ticker-container {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top center;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -4796,27 +4795,13 @@ body.mobile-menu-open .market-ticker-container {
   transform: scale(1.05);
 }
 
-/* Bento Span Logic for Desktop */
-@media (min-width: 768px) {
-  .gallery-item-bento.large {
-    grid-column: span 2;
-    grid-row: span 2;
-  }
-  .gallery-item-bento.wide {
-    grid-column: span 2;
-    grid-row: span 1;
-  }
-  .gallery-item-bento.standard {
-    grid-column: span 1;
-    grid-row: span 1;
-  }
-}
+/* Removed irregular span logic to enforce systematic box grid */
 
 /* Awards Page Styles */
 .awards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .award-card {
@@ -4854,6 +4839,7 @@ body.mobile-menu-open .market-ticker-container {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top center;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -4898,7 +4884,7 @@ body.mobile-menu-open .market-ticker-container {
 }
 
 .award-info {
-  padding: 1.5rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -4941,7 +4927,7 @@ body.mobile-menu-open .market-ticker-container {
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 24px;
   overflow: hidden;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -4981,6 +4967,7 @@ body.mobile-menu-open .market-ticker-container {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top center;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -5007,7 +4994,7 @@ body.mobile-menu-open .market-ticker-container {
 }
 
 .award-featured-info {
-  padding: 2.5rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;

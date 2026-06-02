@@ -66,7 +66,7 @@ export default function AwardsPage() {
     e.stopPropagation();
     setZoomLevel(prev => Math.min(prev + 0.5, 3));
   };
-  
+
   const handleZoomOut = (e: React.MouseEvent) => {
     e.stopPropagation();
     setZoomLevel(prev => Math.max(prev - 0.5, 1));
@@ -100,10 +100,10 @@ export default function AwardsPage() {
       <MarketTicker />
       <div className="hero-bg-wrapper">
         <Navbar />
-        
+
         {/* Awards Header */}
-        <div style={{ paddingTop: "140px", paddingBottom: "60px", textAlign: "center", position: "relative", zIndex: 1, paddingInline: "1.5rem" }}>
-          <motion.span 
+        <div style={{ paddingTop: "140px", paddingBottom: "30px", textAlign: "center", position: "relative", zIndex: 1, paddingInline: "clamp(1.5rem, 12vw, 15rem)" }}>
+          <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             style={{
@@ -122,7 +122,7 @@ export default function AwardsPage() {
           >
             Awards & Accolades
           </motion.span>
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
@@ -131,7 +131,7 @@ export default function AwardsPage() {
           >
             Celebrating Excellence
           </motion.h1>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -143,8 +143,8 @@ export default function AwardsPage() {
       </div>
 
       {/* Awards Section Container */}
-      <section className="container" style={{ paddingBottom: "6rem", paddingInline: "1.5rem" }}>
-        
+      <section className="container" style={{ paddingBottom: "3rem", paddingInline: "clamp(1.5rem, 12vw, 15rem)" }}>
+
         {/* Featured Award Banner */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -153,19 +153,19 @@ export default function AwardsPage() {
           transition={{ duration: 0.7 }}
           className="award-featured-card"
         >
-          <div 
+          <div
             className="award-featured-img-wrapper"
             onClick={() => setSelectedImage(featuredAward.imageFile)}
           >
-            <img 
-              src={`/awards/${featuredAward.imageFile}`} 
-              alt={featuredAward.alt} 
+            <img
+              src={`/awards/${featuredAward.imageFile}`}
+              alt={featuredAward.alt}
               loading="lazy"
               className="award-featured-img"
             />
             <div className="award-featured-overlay">
               <div className="award-zoom-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" /></svg>
               </div>
             </div>
           </div>
@@ -198,19 +198,19 @@ export default function AwardsPage() {
                 transition={{ delay: (index % 3) * 0.1, duration: 0.6 }}
                 className="award-card"
               >
-                <div 
+                <div
                   className="award-img-wrapper"
                   onClick={() => setSelectedImage(award.imageFile)}
                 >
-                  <img 
-                    src={`/awards/${award.imageFile}`} 
-                    alt={award.alt} 
+                  <img
+                    src={`/awards/${award.imageFile}`}
+                    alt={award.alt}
                     loading="lazy"
                     className="award-img"
                   />
                   <div className="award-overlay">
                     <div className="award-zoom-icon">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" /></svg>
                     </div>
                   </div>
                 </div>
