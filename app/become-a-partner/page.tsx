@@ -139,13 +139,13 @@ export default function BecomeAPartner() {
   };
 
   return (
-    <main style={{ background: "var(--background)" }}>
+    <main className="bp-main-wrapper">
       <MarketTicker />
       <div className="hero-bg-wrapper">
         <Navbar />
 
         {/* Modern Slider Header */}
-        <div style={{ position: "relative", height: "300px", overflow: "hidden", marginTop: "130px" }}>
+        <div className="partner-slider-container">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentSlide}
@@ -153,42 +153,18 @@ export default function BecomeAPartner() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.8 }}
+              className="partner-slider-slide"
               style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
                 backgroundImage: `url(${slides[currentSlide].bg})`,
-                backgroundColor: "transparent",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "var(--foreground)"
               }}
             >
-              <div className="container" style={{ maxWidth: "800px", width: "100%", textAlign: "left" }}>
-                <div style={{ maxWidth: "550px", width: "100%" }}>
+              <div className="partner-slider-content-wrapper container">
+                <div className="bp-hero-text-block">
                   <motion.span
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.2 }}
-                    style={{
-                      display: "inline-block",
-                      padding: "0.25rem 0.75rem",
-                      borderRadius: "9999px",
-                      background: "rgba(15, 23, 42, 0.06)",
-                      fontSize: "0.72rem",
-                      fontWeight: 600,
-                      letterSpacing: "0.05em",
-                      textTransform: "uppercase",
-                      marginBottom: "0.75rem",
-                      border: "1px solid rgba(15, 23, 42, 0.1)",
-                      color: "var(--primary)"
-                    }}
+                    className="bp-hero-badge"
                   >
                     Partner Opportunity
                   </motion.span>
@@ -196,14 +172,7 @@ export default function BecomeAPartner() {
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.3 }}
-                    style={{
-                      fontSize: "clamp(1.3rem, 2.6vw, 1.8rem)",
-                      fontWeight: 800,
-                      marginBottom: "0.5rem",
-                      lineHeight: 1.15,
-                      letterSpacing: "-0.03em",
-                      color: "var(--foreground)"
-                    }}
+                    className="bp-hero-title"
                   >
                     {slides[currentSlide].title}
                   </motion.h1>
@@ -211,13 +180,7 @@ export default function BecomeAPartner() {
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.4 }}
-                    style={{
-                      fontSize: "clamp(0.75rem, 1.5vw, 0.88rem)",
-                      color: "var(--text-muted)",
-                      fontWeight: 500,
-                      lineHeight: 1.5,
-                      whiteSpace: "pre-line"
-                    }}
+                    className="bp-hero-subtitle"
                   >
                     {slides[currentSlide].subtitle}
                   </motion.p>
@@ -227,27 +190,14 @@ export default function BecomeAPartner() {
           </AnimatePresence>
 
           {/* Slider Indicators */}
-          <div style={{
-            position: "absolute",
-            bottom: "20px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            display: "flex",
-            gap: "10px",
-            zIndex: 10
-          }}>
+          <div className="bp-slider-indicators">
             {slides.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
+                className="bp-slider-dot"
                 style={{
-                  width: "12px",
-                  height: "12px",
-                  borderRadius: "50%",
                   backgroundColor: currentSlide === index ? "var(--primary)" : "var(--border)",
-                  border: "none",
-                  cursor: "pointer",
-                  transition: "all 0.3s ease"
                 }}
               />
             ))}
@@ -256,79 +206,43 @@ export default function BecomeAPartner() {
       </div>
 
       {/* Main Section: Info + Contact Form */}
-      <section className="container" style={{
-        padding: "1.5rem clamp(1rem, 4vw, 2.5rem)",
-        position: "relative",
-        maxWidth: "800px",
-        margin: "0 auto"
-      }}>
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-          gap: "2rem",
-          alignItems: "start"
-        }}>
+      <section className="container bp-main-section">
+        <div className="bp-grid-layout">
           {/* Left Column: Info */}
           <div>
-            <div style={{
-              width: "28px",
-              height: "2px",
-              background: "linear-gradient(90deg, var(--primary), var(--primary-light))",
-              borderRadius: "2px",
-              marginBottom: "0.4rem"
-            }} />
-            <h2 style={{ fontSize: "1.25rem", fontWeight: 700, color: "var(--foreground)", marginBottom: "0.4rem", letterSpacing: "-0.02em" }}>
+            <div className="bp-section-line" />
+            <h2 className="bp-section-title">
               Get Started
             </h2>
-            <p style={{ color: "var(--text-muted)", fontSize: "0.825rem", lineHeight: 1.4, marginBottom: "1.25rem" }}>
+            <p className="bp-section-desc">
               Let’s get in touch to start your journey to become a FINANCIAL ADVISOR. Kindly fill the form with required details or simply call / email us.
             </p>
 
-            <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
-              <div className="glass" style={{ display: "flex", alignItems: "center", gap: "0.65rem", padding: "0.6rem 0.8rem", borderRadius: "10px" }}>
-                <div style={{
-                  width: "30px",
-                  height: "30px",
-                  borderRadius: "6px",
-                  background: "rgba(37, 99, 235, 0.1)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  color: "#2563eb",
-                  flexShrink: 0
-                }}>
+            <div className="bp-contact-list">
+              <div className="glass bp-contact-card">
+                <div className="bp-contact-icon phone">
                   <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
                 </div>
                 <div>
-                  <div style={{ fontSize: "0.65rem", color: "var(--text-muted)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.02em" }}>Phone Support</div>
-                  <div style={{ fontSize: "0.82rem", fontWeight: 700, color: "var(--foreground)", marginTop: "0.02rem" }}>+91 7669016565</div>
+                  <div className="bp-contact-label">Phone Support</div>
+                  <div className="bp-contact-value">+91 7669016565</div>
                 </div>
               </div>
 
-              <div className="glass" style={{ display: "flex", alignItems: "center", gap: "0.65rem", padding: "0.6rem 0.8rem", borderRadius: "10px" }}>
-                <div style={{
-                  width: "30px",
-                  height: "30px",
-                  borderRadius: "6px",
-                  background: "rgba(16, 185, 129, 0.1)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  color: "#10b981",
-                  flexShrink: 0
-                }}>
+              <div className="glass bp-contact-card">
+                <div className="bp-contact-icon email">
                   <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg>
                 </div>
                 <div>
-                  <div style={{ fontSize: "0.65rem", color: "var(--text-muted)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.02em" }}>Email Support</div>
-                  <div style={{ fontSize: "0.82rem", fontWeight: 700, color: "var(--foreground)", marginTop: "0.02rem" }}>care@investesy.in</div>
+                  <div className="bp-contact-label">Email Support</div>
+                  <div className="bp-contact-value">care@investesy.in</div>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Right Column: Form */}
-          <div className="glass" style={{ padding: "1.5rem", borderRadius: "16px", boxShadow: "var(--shadow-xl)" }}>
+          <div className="glass bp-form-card">
             <AnimatePresence mode="wait">
               {!isSubmitted ? (
                 <motion.form
@@ -337,13 +251,13 @@ export default function BecomeAPartner() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}
+                  className="bp-form-layout"
                 >
-                  <h3 style={{ fontSize: "1.1rem", fontWeight: 700, color: "var(--foreground)", marginBottom: "0.15rem" }}>Partner Registration</h3>
+                  <h3 className="bp-form-title">Partner Registration</h3>
 
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.6rem" }}>
-                    <div style={{ display: "flex", flexDirection: "column", gap: "0.15rem" }}>
-                      <label style={{ fontSize: "0.68rem", fontWeight: 600, color: "var(--text-muted)" }}>Name</label>
+                  <div className="bp-form-row">
+                    <div className="bp-form-group">
+                      <label className="bp-form-label">Name</label>
                       <input
                         type="text"
                         name="name"
@@ -351,20 +265,12 @@ export default function BecomeAPartner() {
                         placeholder="Your Name"
                         value={formData.name}
                         onChange={handleInputChange}
-                        style={{
-                          padding: "0.4rem 0.6rem",
-                          borderRadius: "6px",
-                          border: "1px solid var(--border)",
-                          outline: "none",
-                          fontSize: "0.78rem",
-                          width: "100%",
-                          boxSizing: "border-box"
-                        }}
+                        className="bp-input"
                       />
                     </div>
 
-                    <div style={{ display: "flex", flexDirection: "column", gap: "0.15rem" }}>
-                      <label style={{ fontSize: "0.68rem", fontWeight: 600, color: "var(--text-muted)" }}>Email</label>
+                    <div className="bp-form-group">
+                      <label className="bp-form-label">Email</label>
                       <input
                         type="email"
                         name="email"
@@ -372,22 +278,14 @@ export default function BecomeAPartner() {
                         placeholder="Email Address"
                         value={formData.email}
                         onChange={handleInputChange}
-                        style={{
-                          padding: "0.4rem 0.6rem",
-                          borderRadius: "6px",
-                          border: "1px solid var(--border)",
-                          outline: "none",
-                          fontSize: "0.78rem",
-                          width: "100%",
-                          boxSizing: "border-box"
-                        }}
+                        className="bp-input"
                       />
                     </div>
                   </div>
 
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.6rem" }}>
-                    <div style={{ display: "flex", flexDirection: "column", gap: "0.15rem" }}>
-                      <label style={{ fontSize: "0.68rem", fontWeight: 600, color: "var(--text-muted)" }}>Mobile Number</label>
+                  <div className="bp-form-row">
+                    <div className="bp-form-group">
+                      <label className="bp-form-label">Mobile Number</label>
                       <input
                         type="tel"
                         name="phone"
@@ -395,20 +293,12 @@ export default function BecomeAPartner() {
                         placeholder="Mobile Number"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        style={{
-                          padding: "0.4rem 0.6rem",
-                          borderRadius: "6px",
-                          border: "1px solid var(--border)",
-                          outline: "none",
-                          fontSize: "0.78rem",
-                          width: "100%",
-                          boxSizing: "border-box"
-                        }}
+                        className="bp-input"
                       />
                     </div>
 
-                    <div style={{ display: "flex", flexDirection: "column", gap: "0.15rem" }}>
-                      <label style={{ fontSize: "0.68rem", fontWeight: 600, color: "var(--text-muted)" }}>City</label>
+                    <div className="bp-form-group">
+                      <label className="bp-form-label">City</label>
                       <input
                         type="text"
                         name="city"
@@ -416,72 +306,40 @@ export default function BecomeAPartner() {
                         placeholder="City"
                         value={formData.city}
                         onChange={handleInputChange}
-                        style={{
-                          padding: "0.4rem 0.6rem",
-                          borderRadius: "6px",
-                          border: "1px solid var(--border)",
-                          outline: "none",
-                          fontSize: "0.78rem",
-                          width: "100%",
-                          boxSizing: "border-box"
-                        }}
+                        className="bp-input"
                       />
                     </div>
                   </div>
 
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.6rem" }}>
-                    <div style={{ display: "flex", flexDirection: "column", gap: "0.15rem" }}>
-                      <label style={{ fontSize: "0.68rem", fontWeight: 600, color: "var(--text-muted)" }}>ARN, if any</label>
+                  <div className="bp-form-row">
+                    <div className="bp-form-group">
+                      <label className="bp-form-label">ARN, if any</label>
                       <input
                         type="text"
                         name="arn"
                         placeholder="ARN (if any)"
                         value={formData.arn}
                         onChange={handleInputChange}
-                        style={{
-                          padding: "0.4rem 0.6rem",
-                          borderRadius: "6px",
-                          border: "1px solid var(--border)",
-                          outline: "none",
-                          fontSize: "0.78rem",
-                          width: "100%",
-                          boxSizing: "border-box"
-                        }}
+                        className="bp-input"
                       />
                     </div>
 
-                    <div style={{ display: "flex", flexDirection: "column", gap: "0.15rem" }}>
-                      <label style={{ fontSize: "0.68rem", fontWeight: 600, color: "var(--text-muted)" }}>Referred by</label>
+                    <div className="bp-form-group">
+                      <label className="bp-form-label">Referred by</label>
                       <input
                         type="text"
                         name="referredBy"
                         placeholder="Referred by"
                         value={formData.referredBy}
                         onChange={handleInputChange}
-                        style={{
-                          padding: "0.4rem 0.6rem",
-                          borderRadius: "6px",
-                          border: "1px solid var(--border)",
-                          outline: "none",
-                          fontSize: "0.78rem",
-                          width: "100%",
-                          boxSizing: "border-box"
-                        }}
+                        className="bp-input"
                       />
                     </div>
                   </div>
 
                   <button
                     type="submit"
-                    className="btn btn-primary"
-                    style={{
-                      width: "100%",
-                      padding: "0.5rem",
-                      borderRadius: "6px",
-                      marginTop: "0.25rem",
-                      fontSize: "0.82rem",
-                      height: "auto"
-                    }}
+                    className="btn btn-primary bp-submit-btn"
                   >
                     Submit
                   </button>
@@ -491,31 +349,13 @@ export default function BecomeAPartner() {
                   key="success"
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    padding: "2rem 0",
-                    textAlign: "center"
-                  }}
+                  className="bp-success-card"
                 >
-                  <div style={{
-                    width: "64px",
-                    height: "64px",
-                    borderRadius: "50%",
-                    backgroundColor: "#10b981",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    color: "#ffffff",
-                    marginBottom: "1.5rem",
-                    boxShadow: "0 0 20px rgba(16, 185, 129, 0.4)"
-                  }}>
+                  <div className="bp-success-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><polyline points="20 6 9 17 4 12" /></svg>
                   </div>
-                  <h3 style={{ fontSize: "1.5rem", fontWeight: 700, color: "var(--foreground)", marginBottom: "0.75rem" }}>Thank You!</h3>
-                  <p style={{ color: "var(--text-muted)", lineHeight: 1.6, maxWidth: "300px" }}>
+                  <h3 className="bp-success-title">Thank You!</h3>
+                  <p className="bp-success-desc">
                     Your partner request has been submitted successfully. Our team will contact you shortly to complete your registration.
                   </p>
                   <button
@@ -523,8 +363,7 @@ export default function BecomeAPartner() {
                       setIsSubmitted(false);
                       setFormData({ name: "", email: "", phone: "", city: "", arn: "", referredBy: "" });
                     }}
-                    className="btn btn-outline"
-                    style={{ marginTop: "1.5rem", padding: "0.5rem 1.5rem" }}
+                    className="btn btn-outline bp-success-btn"
                   >
                     Send another inquiry
                   </button>
@@ -536,20 +375,16 @@ export default function BecomeAPartner() {
       </section>
 
       {/* Feature Section */}
-      <section style={{ padding: "3rem 1.5rem" }}>
-        <div className="container" style={{ maxWidth: "860px" }}>
-          <div style={{ textAlign: "center", marginBottom: "2rem" }}>
-            <h2 className="why-title text-gradient" style={{ marginBottom: "0.4rem", fontSize: "1.5rem", fontWeight: 800 }}>
+      <section className="bp-features-section">
+        <div className="container bp-features-container">
+          <div className="bp-features-header">
+            <h2 className="why-title text-gradient bp-features-title">
               Partner with Real Fincorp Private Limited and get the Edge
             </h2>
             <div className="animated-underline" style={{ marginInline: "auto" }} />
           </div>
 
-          <div style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
-            gap: "1.25rem"
-          }}>
+          <div className="bp-features-grid">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
@@ -557,35 +392,19 @@ export default function BecomeAPartner() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className="card"
+                className="card bp-feature-card"
                 style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  padding: "1.25rem",
-                  borderRadius: "12px",
-                  height: "100%",
                   backgroundColor: feature.bg,
                   borderColor: feature.borderColor
                 }}
               >
-                <div style={{
-                  width: "40px",
-                  height: "40px",
-                  borderRadius: "8px",
-                  background: "var(--background)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  boxShadow: "var(--shadow-sm)",
-                  marginBottom: "1rem",
-                  flexShrink: 0
-                }}>
+                <div className="bp-feature-icon">
                   {feature.icon}
                 </div>
-                <h3 style={{ fontSize: "0.95rem", fontWeight: 700, color: "var(--foreground)", marginBottom: "0.4rem", lineHeight: 1.3 }}>
+                <h3 className="bp-feature-title">
                   {feature.title}
                 </h3>
-                <p style={{ color: "var(--text-muted)", fontSize: "0.8rem", lineHeight: 1.4, flexGrow: 1 }}>
+                <p className="bp-feature-desc">
                   {feature.desc}
                 </p>
               </motion.div>
@@ -595,25 +414,26 @@ export default function BecomeAPartner() {
       </section>
 
       {/* Testimonials Slider */}
-      <section className="testimonials-wrapper" style={{ padding: "3rem 1.5rem" }}>
+      <section className="testimonials-wrapper bp-testi-wrapper">
         <div className="testimonials-inner">
-          <div style={{ textAlign: 'center', marginBottom: '1.5rem', position: 'relative', zIndex: 10 }}>
-            <h2 className="why-title text-gradient" style={{ marginBottom: "0.25rem", fontSize: "1.5rem" }}>
+          <div className="bp-testi-header">
+            <h2 className="why-title text-gradient bp-testi-title">
               Testimonials
             </h2>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 1000 100"
-              style={{ width: "220px", height: "22px", display: "block", margin: "0.3rem auto 0.4rem" }}            >
+              className="bp-testi-svg"
+            >
               <path fill="var(--primary)" d="M929 38c-12-5-24-8-36-8l-10 8c-22-9-42-18-72-18l-28 25H217l-28-25c-31 0-51 10-72 18l-9-8c-13 0-25 3-37 8L40 50l31 13c12 5 24 7 37 7l9-8c22 9 42 18 72 18l28-25h566l28 25c31 0 51-10 72-18l10 8c12 0 24-2 36-7l31-13-31-12Z"></path>
             </svg>
-            <p className="testimonials-header-desc" style={{ marginTop: "0.5rem", fontSize: "0.85rem" }}>
+            <p className="testimonials-header-desc bp-testi-desc">
               Our Clients Say's
             </p>
           </div>
 
           {/* Testimonial Active Display */}
-          <div style={{ maxWidth: "600px", margin: "0 auto", position: "relative" }}>
+          <div className="bp-testi-content">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentTestimonial}
@@ -621,73 +441,35 @@ export default function BecomeAPartner() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: -20, x: 0 }}
                 transition={{ duration: 0.4 }}
-                className="t-card"
-                style={{
-                  background: "linear-gradient(135deg, var(--primary), var(--primary-light))",
-                  padding: "1.75rem",
-                  borderRadius: "16px",
-                  color: "#ffffff",
-                  position: "relative",
-                  boxShadow: "var(--shadow-xl)",
-                  margin: "0.5rem"
-                }}
+                className="t-card bp-testi-card"
               >
-                <span className="t-quote-mark" style={{ top: "0.5rem", left: "1.25rem", opacity: 0.12, fontSize: "5rem" }}>"</span>
+                <span className="t-quote-mark bp-testi-quote">"</span>
 
-                <p style={{
-                  fontSize: "0.875rem",
-                  lineHeight: 1.5,
-                  fontStyle: "italic",
-                  marginBottom: "1.25rem",
-                  position: "relative",
-                  zIndex: 2,
-                  fontWeight: 300
-                }}>
+                <p className="bp-testi-text">
                   {testimonials[currentTestimonial].text}
                 </p>
 
-                <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-                  <div style={{
-                    width: "36px",
-                    height: "36px",
-                    borderRadius: "50%",
-                    background: "rgba(255, 255, 255, 0.2)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontWeight: 700,
-                    fontSize: "0.8rem",
-                    flexShrink: 0
-                  }}>
+                <div className="bp-testi-author">
+                  <div className="bp-testi-avatar">
                     {testimonials[currentTestimonial].initials}
                   </div>
                   <div>
-                    <h4 style={{ margin: 0, fontSize: "0.9rem", fontWeight: 700 }}>{testimonials[currentTestimonial].name}</h4>
-                    <span style={{ fontSize: "0.7rem", opacity: 0.7, fontWeight: 500 }}>{testimonials[currentTestimonial].designation}</span>
+                    <h4 className="bp-testi-name">{testimonials[currentTestimonial].name}</h4>
+                    <span className="bp-testi-role">{testimonials[currentTestimonial].designation}</span>
                   </div>
                 </div>
               </motion.div>
             </AnimatePresence>
 
             {/* Pagination / Controls */}
-            <div style={{
-              display: "flex",
-              justifyContent: "center",
-              gap: "8px",
-              marginTop: "1.25rem"
-            }}>
+            <div className="bp-testi-pagination">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentTestimonial(index)}
+                  className="bp-testi-dot"
                   style={{
-                    width: "24px",
-                    height: "5px",
-                    borderRadius: "2px",
                     backgroundColor: currentTestimonial === index ? "var(--primary)" : "var(--border)",
-                    border: "none",
-                    cursor: "pointer",
-                    transition: "all 0.3s ease"
                   }}
                 />
               ))}
