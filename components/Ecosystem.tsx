@@ -51,7 +51,7 @@ export default function Ecosystem() {
                 <span>Financial<br />Services</span>
               </div>
               <div className="eco-card border-green">
-                <img src="/Brands/sahipe_logo.webp" alt="सही पे" className="eco-logo-img" />
+                <img src="/Brands/sahipe_logo.jpg" alt="सही पे" className="eco-logo-img" />
                 <span className="eco-url">www.sahipe.com</span>
                 <div className="eco-line line-ml"></div>
               </div>
@@ -64,7 +64,7 @@ export default function Ecosystem() {
                 <span>Investment<br />Platform</span>
               </div>
               <div className="eco-card border-blue">
-                <img src="/Brands/investesy_logo.webp" alt="InvestEsy" className="eco-logo-img" />
+                <img src="/Brands/investesy_logo.jpg" alt="InvestEsy" className="eco-logo-img" />
                 <span className="eco-url">www.investesy.in</span>
                 <div className="eco-line line-bl"></div>
               </div>
@@ -75,7 +75,7 @@ export default function Ecosystem() {
           <div className="eco-center">
             <div className="eco-hub-ring">
               <div className="eco-hub-inner">
-                <img src="/Brands/spekctrum_icon.webp" alt="SPEKTRUM" className="eco-hub-icon" />
+                <img src="/Brands/spekctrum_icon.jpg" alt="SPEKTRUM" className="eco-hub-icon" />
                 <div className="eco-hub-text">
                   <span className="eco-spektrum-text">
                     <span style={{ color: "#4B2682" }}>S</span>
