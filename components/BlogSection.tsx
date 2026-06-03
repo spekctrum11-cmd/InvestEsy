@@ -1,34 +1,12 @@
 "use client";
 import React from 'react';
-
-const blogs = [
-  {
-    id: 1,
-    title: "Top 5 Mutual Funds to Watch in 2024",
-    category: "Mutual Funds",
-    date: "Oct 12, 2023",
-    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=800&auto=format&fit=crop",
-    excerpt: "Discover the most promising mutual funds that are poised for significant growth in the upcoming financial year."
-  },
-  {
-    id: 2,
-    title: "Why Digital Gold is the Smart Investor's Choice",
-    category: "Digital Gold",
-    date: "Nov 05, 2023",
-    image: "https://images.unsplash.com/photo-1610375461246-83df859d849d?q=80&w=800&auto=format&fit=crop",
-    excerpt: "Learn how digital gold offers the security of physical gold without the hassle of storage and making charges."
-  },
-  {
-    id: 3,
-    title: "Navigating Corporate FDs: A Complete Guide",
-    category: "Fixed Deposits",
-    date: "Nov 28, 2023",
-    image: "https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?q=80&w=800&auto=format&fit=crop",
-    excerpt: "Explore how corporate fixed deposits can provide higher returns compared to traditional bank FDs with calculated risks."
-  }
-];
+import Link from 'next/link';
+import { blogs } from "@/data/blogsData";
 
 export default function BlogSection() {
+  // Use the most recent 3 blogs for the home page insights section
+  const recentBlogs = blogs.slice(0, 3);
+
   return (
     <section className="blog-section">
       {/* Background Overlay SVG */}
@@ -61,8 +39,8 @@ export default function BlogSection() {
 
         {/* Desktop Grid */}
         <div className="blog-grid blog-desktop-only">
-          {blogs.map((blog) => (
-            <article key={blog.id} className="blog-card">
+          {recentBlogs.map((blog) => (
+            <Link href={`/blog/${blog.slug}`} key={blog.id} className="blog-card" style={{ textDecoration: 'none', color: 'inherit' }}>
               <div className="blog-image-wrapper">
                 <img src={blog.image} alt={blog.title} loading="lazy" />
                 <span className="blog-category-tag">{blog.category}</span>
@@ -79,67 +57,76 @@ export default function BlogSection() {
                 </div>
                 <h3 className="blog-title">{blog.title}</h3>
                 <p className="blog-excerpt">{blog.excerpt}</p>
-                <a href="#" className="blog-read-more">
+                <span className="blog-read-more">
                   Read More
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
                     <polyline points="12 5 19 12 12 19"></polyline>
                   </svg>
-                </a>
+                </span>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
 
         {/* Mobile: Featured Hero + Compact Strips */}
-        <div className="blog-mobile-only">
-          {/* Featured Card */}
-          <article className="blog-card blog-featured">
-            <div className="blog-image-wrapper">
-              <img src={blogs[0].image} alt={blogs[0].title} loading="lazy" />
-              <span className="blog-category-tag">{blogs[0].category}</span>
-            </div>
-            <div className="blog-content">
-              <div className="blog-date">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                  <line x1="16" y1="2" x2="16" y2="6"></line>
-                  <line x1="8" y1="2" x2="8" y2="6"></line>
-                  <line x1="3" y1="10" x2="21" y2="10"></line>
-                </svg>
-                {blogs[0].date}
+        {recentBlogs.length > 0 && (
+          <div className="blog-mobile-only">
+            {/* Featured Card */}
+            <Link href={`/blog/${recentBlogs[0].slug}`} className="blog-card blog-featured" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <div className="blog-image-wrapper">
+                <img src={recentBlogs[0].image} alt={recentBlogs[0].title} loading="lazy" />
+                <span className="blog-category-tag">{recentBlogs[0].category}</span>
               </div>
-              <h3 className="blog-title">{blogs[0].title}</h3>
-              <a href="#" className="blog-read-more">
-                Read More
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-            </div>
-          </article>
-
-          {/* Compact Strip Cards */}
-          {blogs.slice(1).map((blog) => (
-            <article key={blog.id} className="blog-card blog-strip">
-              <div className="blog-strip-image">
-                <img src={blog.image} alt={blog.title} loading="lazy" />
-                <span className="blog-category-tag blog-strip-tag">{blog.category}</span>
-              </div>
-              <div className="blog-strip-content">
-                <div className="blog-date">{blog.date}</div>
-                <h3 className="blog-title">{blog.title}</h3>
-                <a href="#" className="blog-read-more">
-                  Read More
+              <div className="blog-content">
+                <div className="blog-date">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                  {recentBlogs[0].date}
+                </div>
+                <h3 className="blog-title">{recentBlogs[0].title}</h3>
+                <span className="blog-read-more">
+                  Read More
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
                     <polyline points="12 5 19 12 12 19"></polyline>
                   </svg>
-                </a>
+                </span>
               </div>
-            </article>
-          ))}
+            </Link>
+
+            {/* Compact Strip Cards */}
+            {recentBlogs.slice(1).map((blog) => (
+              <Link href={`/blog/${blog.slug}`} key={blog.id} className="blog-card blog-strip" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <div className="blog-strip-image">
+                  <img src={blog.image} alt={blog.title} loading="lazy" />
+                  <span className="blog-category-tag blog-strip-tag">{blog.category}</span>
+                </div>
+                <div className="blog-strip-content">
+                  <div className="blog-date">{blog.date}</div>
+                  <h3 className="blog-title">{blog.title}</h3>
+                  <span className="blog-read-more">
+                    Read More
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        )}
+
+        {/* View All Insights Brutalism Button */}
+        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '3rem', position: 'relative', zIndex: 10 }}>
+          <Link href="/blogs" className="btn-all-blogs-neo">
+            View All Insights
+          </Link>
         </div>
 
       </div>

@@ -132,7 +132,7 @@ export default function Navbar() {
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="service-icon icon-purple"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
               Open Free Demat Account
             </Link>
-            <Link href="https://investesy.in/blogs/" className="service-link">
+            <Link href="/blogs" className="service-link">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="service-icon icon-orange"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
               Blogs
             </Link>
@@ -295,7 +295,7 @@ export default function Navbar() {
               <Link href="https://investesy.in/mf-forms/" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>Downloads</Link>
               <Link href="https://investesy.in/principles-of-investing/" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>Principles of Investing</Link>
               <Link href="https://investesy.in/open-free-demat-account/" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>Open Free Demat Account</Link>
-              <Link href="https://investesy.in/blogs/" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>Blogs</Link>
+              <Link href="/blogs" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>Blogs</Link>
               <Link href="https://investesy.in/faqs/" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>FAQs</Link>
             </div>
           </div>
