@@ -254,7 +254,7 @@ h6 {
   gap: 1.25rem;
   font-weight: 300;
   font-size: 0.92rem;
-  color: #0f172a;
+  color: #404041;
 }
 
 .nav-actions-mobile {
@@ -388,8 +388,9 @@ body.mobile-menu-open .market-ticker-container {
   transform: scale(1.05);
 }
 
+
 .navbar .nav-links a:hover {
-  color: #2563eb;
+  color: #000000;
 }
 
 .mobile-toggle {
@@ -926,7 +927,7 @@ body.mobile-menu-open .market-ticker-container {
     gap: 0.75rem;
     padding: 0.7rem 0.75rem;
     border-radius: 10px;
-    color: #475569;
+    color: #000000;
     font-size: 0.95rem;
     font-weight: 400;
     text-decoration: none;
@@ -1015,7 +1016,7 @@ body.mobile-menu-open .market-ticker-container {
 .nav-item .dropdown a,
 .dropdown-toggler {
   padding: 0.15rem 1rem;
-  color: #1e2125;
+  color: #000000;
   font-size: 0.95rem;
   font-weight: 200;
   white-space: nowrap;
@@ -1040,16 +1041,16 @@ body.mobile-menu-open .market-ticker-container {
 }
 
 .service-icon {
-  opacity: 0.5;
+  opacity: 1;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  transform: translateX(-4px);
+  transform: translateX(0);
 }
 
 /* Standard Premium Hover Utility */
 .nav-item .dropdown a:hover,
 .dropdown-toggler:hover {
   background: var(--background) !important;
-  color: #2563eb !important;
+  color: #000000 !important;
 }
 
 /* Togglable nested menus */
@@ -1087,30 +1088,24 @@ body.mobile-menu-open .market-ticker-container {
   opacity: 0.85;
 }
 
-/* Colorful Icon Hover States */
-.nav-item .dropdown a:hover .service-icon {
-  opacity: 1;
-  transform: translateX(0);
-  /* Icon slides into place */
-}
-
-.nav-item .dropdown a:hover .icon-blue {
+/* Colorful Icons */
+.icon-blue {
   stroke: #3b82f6;
 }
 
-.nav-item .dropdown a:hover .icon-green {
+.icon-green {
   stroke: #10b981;
 }
 
-.nav-item .dropdown a:hover .icon-pink {
+.icon-pink {
   stroke: #ec4899;
 }
 
-.nav-item .dropdown a:hover .icon-orange {
+.icon-orange {
   stroke: #f97316;
 }
 
-.nav-item .dropdown a:hover .icon-purple {
+.icon-purple {
   stroke: #8b5cf6;
 }
 
