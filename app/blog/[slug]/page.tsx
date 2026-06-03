@@ -56,6 +56,12 @@ export default async function BlogPostPage({ params }: PageProps) {
     .replace(/srcset=\\"[^"\\]*\\"/gi, '')
     .replace(/sizes=\\"[^"\\]*\\"/gi, '');
 
+  // 3. Remove all anchor tags from the text, leaving only the inner content
+  cleanContent = cleanContent.replace(/<a\b[^>]*>([\s\S]*?)<\/a>/gi, '$1');
+
+  // 4. Remove "READ ALSO" or "ALSO READ" sections
+  cleanContent = cleanContent.replace(/<p[^>]*>(?:(?!<\/p>)[\s\S])*?(?:READ\s*ALSO|ALSO\s*READ)(?:(?!<\/p>)[\s\S])*?<\/p>/gi, '');
+
   return (
     <main style={{ background: "var(--background)", minHeight: "100vh" }}>
       <MarketTicker />

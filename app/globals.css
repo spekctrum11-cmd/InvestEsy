@@ -5613,16 +5613,13 @@ body.mobile-menu-open .market-ticker-container {
 
 .premium-prose .has-vivid-cyan-blue-color,
 .premium-prose mark.has-vivid-cyan-blue-color {
-  background: rgba(29, 78, 216, 0.08) !important;
-  /* Subtle blue tint */
-  color: #1d4ed8 !important;
-  /* Premium blue highlight */
-  padding: 0.1em 0.25em;
-  border-radius: 4px;
+  background: transparent !important;
+  color: inherit !important;
+  padding: 0 !important;
 }
 
 .premium-prose mark.has-vivid-cyan-blue-color * {
-  color: #1d4ed8 !important;
+  color: inherit !important;
 }
 
 .premium-prose .has-pale-cyan-blue-color,
