@@ -33,6 +33,15 @@ export default function RootLayout({
       <body style={{ fontFamily: "var(--font-outfit), sans-serif" }}>
         {children}
         <Footer />
+        <a 
+          href="https://wa.me/917669016565" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="floating-whatsapp"
+          aria-label="Chat with us on WhatsApp"
+        >
+          <img src="/floating-Whatsapp.png" alt="WhatsApp" />
+        </a>
       </body>
     </html>
 
