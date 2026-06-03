@@ -24,7 +24,7 @@ export default function Ecosystem() {
             </span>{" "}
             Ecosystem
           </h2>
-          <p>One Vision. Multiple Ventures. Infinite Possibilities.</p>
+          <p>All Your Financial Needs in One Place.</p>
         </div>
 
         {/* Diagram */}
