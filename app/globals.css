@@ -5086,7 +5086,7 @@ body.mobile-menu-open .market-ticker-container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0.5rem 1.5rem 2rem;
+  padding: 0.5rem 1rem 2rem;
 }
 
 /* Premium Vercel-Style Segmented Category Filters */
@@ -5671,11 +5671,59 @@ body.mobile-menu-open .market-ticker-container {
   transform: translateX(-4px);
 }
 
-/* Mobile responsive adjustments for blog details */
-@media (max-width: 768px) {
+/* ==========================================================================
+   Responsive Adjustments for Blogs & Blog Details (Tablets & Mobile Phones)
+   ========================================================================== */
+
+/* Tablet Responsive Adjustments (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr) !important; /* Force clean 2-column layout */
+    gap: 1.25rem;
+  }
+
+  .blogs-container {
+    padding: 0.5rem 1rem 2rem;
+  }
+
   .premium-article-wrap {
-    margin-top: 80px;
-    padding: 1.25rem 0.25rem 4rem;
+    margin-top: 115px;
+    padding: 1.5rem 1.25rem 5rem;
+  }
+
+  .blogs-listing-grid {
+    padding: 0 !important;
+  }
+}
+
+/* Mobile Responsive Adjustments (up to 768px) */
+@media (max-width: 768px) {
+  .blog-grid {
+    grid-template-columns: 1fr !important; /* Force clean single column layout */
+    gap: 1.25rem;
+  }
+
+  .blogs-container {
+    padding: 0.5rem 0.75rem 1.5rem;
+  }
+
+  .blog-card {
+    max-width: 320px; /* Shrunk card width on phone */
+    margin: 0 auto; /* Centered card */
+  }
+
+  .blog-image-wrapper {
+    height: 130px !important; /* Compact card image height */
+    aspect-ratio: auto !important; /* Override desktop aspect ratios */
+  }
+
+  .blog-content {
+    padding: 0.75rem !important; /* Tighter internal padding */
+  }
+
+  .premium-article-wrap {
+    margin-top: 105px; /* Clear fixed navbar + ticker completely */
+    padding: 1.25rem 1.25rem 4rem; /* Restored left and right margin for phone */
   }
 
   .premium-article-header {
@@ -5695,16 +5743,26 @@ body.mobile-menu-open .market-ticker-container {
   }
 
   .premium-prose {
-    font-size: 1rem;
-    line-height: 1.75;
+    font-size: 0.95rem;
+    line-height: 1.65;
   }
 
   .premium-prose figure {
-    margin: 1.25rem 0;
+    margin: 1rem 0;
+  }
+
+  .premium-prose img,
+  .premium-prose figure img,
+  .premium-prose iframe,
+  .premium-prose video,
+  .premium-prose table {
+    max-width: 100% !important;
+    height: auto !important;
+    box-sizing: border-box;
   }
 
   .blogs-listing-grid {
-    padding: 0 0.5rem !important;
+    padding: 0 !important;
     margin-bottom: 4rem;
   }
 }
