@@ -11,17 +11,7 @@ export default function Ecosystem() {
         <div className="eco-header">
           <h2>
             The{" "}
-            <span className="eco-spektrum-text">
-              <span style={{ color: "#4B2682" }}>S</span>
-              <span style={{ color: "#2E3192" }}>P</span>
-              <span style={{ color: "#009245" }}>E</span>
-              <span style={{ color: "#8CC63F" }}>K</span>
-              <span style={{ color: "#f1ee18ff" }}>C</span>
-              <span style={{ color: "#F15A24" }}>T</span>
-              <span style={{ color: "#ED1C24" }}>R</span>
-              <span style={{ color: "#29ABE2" }}>U</span>
-              <span style={{ color: "#1B1464" }}>M</span>
-            </span>{" "}
+            <span className="eco-spektrum-text">SPEKCTRUM</span>{" "}
             Ecosystem
           </h2>
           <p>All Your Financial Needs in One Place.</p>
@@ -77,17 +67,7 @@ export default function Ecosystem() {
               <div className="eco-hub-inner">
                 <img src="/Brands/spekctrum_icon.jpg" alt="SPEKTRUM" className="eco-hub-icon" />
                 <div className="eco-hub-text">
-                  <span className="eco-spektrum-text">
-                    <span style={{ color: "#4B2682" }}>S</span>
-                    <span style={{ color: "#2E3192" }}>P</span>
-                    <span style={{ color: "#009245" }}>E</span>
-                    <span style={{ color: "#8CC63F" }}>K</span>
-                    <span style={{ color: "#f1ee18ff" }}>C</span>
-                    <span style={{ color: "#F15A24" }}>T</span>
-                    <span style={{ color: "#ED1C24" }}>R</span>
-                    <span style={{ color: "#29ABE2" }}>U</span>
-                    <span style={{ color: "#1B1464" }}>M</span>
-                  </span>
+                  <span className="eco-spektrum-text">SPEKCTRUM</span>
                   <span className="eco-hub-com">.com</span>
                 </div>
               </div>

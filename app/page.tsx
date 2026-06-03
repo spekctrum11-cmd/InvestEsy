@@ -15,7 +15,16 @@ export default function Home() {
   return (
     <main>
       <MarketTicker />
-      <div className="hero-bg-wrapper">
+      <div className="hero-bg-wrapper landing-hero">
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className="landing-video-bg"
+        >
+          <source src="/4d85d3503886e31249fb482718f867e5.mp4" type="video/mp4" />
+        </video>
         <Navbar />
         <HeroSection />
       </div>
