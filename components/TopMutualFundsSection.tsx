@@ -30,8 +30,9 @@ export default function TopMutualFundsSection() {
             <iframe
               src="https://www.investwell.in/updation/parameter/par_mfperform_schsort.jsp?&ht=ffffff&hbg=015FAF&bt=000000&r1=dddddd&r2=f2f2f2"
               className="mf-iframe"
+              title="Top Mutual Funds Performance"
               frameBorder="0"
-              scrolling="no"
+              scrolling="auto"
               style={{ display: "block", border: "none", backgroundColor: "transparent" }}
             ></iframe>
           </div>
