@@ -87,11 +87,11 @@ export default function Footer() {
             ©2023 Copyright InvestEsy (Real Fincorp Private Limited) All Rights Reserved.
           </div>
           <div className="legal-links">
-            <Link href="#">Disclaimer</Link>
+            <Link href="/disclaimer">Disclaimer</Link>
             <span className="divider">|</span>
-            <Link href="#">Disclosure</Link>
+            <Link href="/disclosure">Disclosure</Link>
             <span className="divider">|</span>
-            <Link href="#">Privacy Policy</Link>
+            <Link href="/privacy-policy">Privacy Policy</Link>
           </div>
         </div>
       </div>
