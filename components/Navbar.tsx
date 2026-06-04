@@ -450,7 +450,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          <Link href="https://investesy.in/contact-us/" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
+          <Link href="/contact-us" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
             <div className="mobile-link-inner">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
               <span>Contact Us</span>
