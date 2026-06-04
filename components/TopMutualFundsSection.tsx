@@ -28,7 +28,7 @@ export default function TopMutualFundsSection() {
         <div className="panel-body mf-panel-body">
           <div className="mf-iframe-wrapper">
             <iframe
-              src="https://www.investwell.in/updation/parameter/par_mfperform_schsort.jsp?&ht=ffffff&hbg=015FAF&bt=000000&r1=dddddd&r2=f2f2f2"
+              src="https://www.investwell.in/updation/parameter/par_mfperform_schsort.jsp?&ht=ffffff&hbg=015FAF&bt=000000&r1=dddddd&r2=f2f2f2&fs=14"
               className="mf-iframe"
               title="Top Mutual Funds Performance"
               frameBorder="0"

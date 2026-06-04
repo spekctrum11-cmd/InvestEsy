@@ -24,8 +24,8 @@ export default function Ecosystem() {
             {/* Item 1 */}
             <div className="eco-item">
               <div className="eco-meta">
-                <div className="eco-icon"><span role="img" aria-label="community">👥</span></div>
-                <span>Community<br />Platform</span>
+                <div className="eco-icon"><span role="img" aria-label="insurance">🛡️</span></div>
+                <span>Insurance<br />Platform</span>
               </div>
               <div className="eco-card border-orange">
                 <img src="/Brands/beemaaa.png" alt="Beeमा" className="eco-logo-img" />

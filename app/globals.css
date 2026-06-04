@@ -227,7 +227,7 @@ h6 {
   width: calc(100% - 3rem);
   max-width: 1200px;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgb(255, 255, 255);
   backdrop-filter: blur(40px) saturate(150%);
   -webkit-backdrop-filter: blur(40px) saturate(150%);
   border: 0.1px solid #20202050;
@@ -237,7 +237,7 @@ h6 {
 }
 
 .navbar.scrolled {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgb(255, 255, 255);
   padding: 0.3rem 2rem;
   top: 46px;
   width: 100%;
@@ -1332,7 +1332,7 @@ body.mobile-menu-open .market-ticker-container {
 /* Elite Glass Panel (For iframe table) - True Dark macOS Style */
 .mf-panel-body {
   overflow: hidden;
-  height: 380px;
+  height: 550px;
   -ms-overflow-style: none;
   /* IE and Edge */
   scrollbar-width: none;
@@ -1345,20 +1345,18 @@ body.mobile-menu-open .market-ticker-container {
 }
 
 .mf-iframe-wrapper {
-  width: 125%;
-  height: 475px;
-  transform: scale(0.8);
-  transform-origin: top left;
+  width: 100%;
+  height: 675px;
 }
 
 .mf-iframe {
   width: 100%;
-  height: 475px;
+  height: 675px;
 }
 
 .top-mf-section {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1250px;
   margin: 8rem auto 6rem;
   padding: 0 2rem;
   position: relative;
@@ -1370,7 +1368,7 @@ body.mobile-menu-open .market-ticker-container {
   }
 
   .mf-panel-body {
-    height: 480px;
+    height: 580px;
     overflow: hidden;
   }
 
@@ -6472,8 +6470,13 @@ a.blog-card * {
 }
 
 @keyframes cuFloat {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(20px, -15px) scale(1.08); }
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    transform: translate(20px, -15px) scale(1.08);
+  }
 }
 
 .cu-banner-overlay {
@@ -6567,8 +6570,13 @@ a.blog-card * {
 }
 
 @keyframes cuSpin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .cu-cards-grid {
@@ -6625,9 +6633,17 @@ a.blog-card * {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
-.cu-card-address { border-bottom: 3px solid rgba(37, 99, 235, 0.4); }
-.cu-card-phone { border-bottom: 3px solid rgba(16, 185, 129, 0.4); }
-.cu-card-email { border-bottom: 3px solid rgba(236, 72, 153, 0.4); }
+.cu-card-address {
+  border-bottom: 3px solid rgba(37, 99, 235, 0.4);
+}
+
+.cu-card-phone {
+  border-bottom: 3px solid rgba(16, 185, 129, 0.4);
+}
+
+.cu-card-email {
+  border-bottom: 3px solid rgba(236, 72, 153, 0.4);
+}
 
 .cu-info-icon {
   width: 52px;
@@ -6946,13 +6962,14 @@ a.blog-card * {
   z-index: 0;
   transform: rotate(-15deg);
 }
+
 .cu-form-decor-blob svg {
   width: 100%;
   height: 100%;
 }
 
-.cu-form-wrapper > form,
-.cu-form-wrapper > .cu-success {
+.cu-form-wrapper>form,
+.cu-form-wrapper>.cu-success {
   position: relative;
   z-index: 1;
 }
@@ -6986,14 +7003,89 @@ a.blog-card * {
     padding: 1.25rem;
   }
 
-  .cu-blob-1 { width: 200px; height: 200px; }
-  .cu-blob-2 { width: 160px; height: 160px; }
-  .cu-blob-3 { display: none; }
-  
+  .cu-blob-1 {
+    width: 200px;
+    height: 200px;
+  }
+
+  .cu-blob-2 {
+    width: 160px;
+    height: 160px;
+  }
+
+  .cu-blob-3 {
+    display: none;
+  }
+
   .cu-form-decor-blob {
     top: 20%;
     right: -25%;
     width: 320px;
     height: 320px;
   }
+}
+
+/* Floating Contact Widget */
+.floating-contact-wrapper {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+.floating-contact-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.floating-contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 9999px;
+  color: #ffffff;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.floating-contact-call {
+  background-color: #64748b;
+}
+
+.floating-contact-call:hover {
+  background-color: #f97316;
+}
+
+.floating-contact-wa {
+  background-color: #22c55e;
+}
+
+.floating-contact-wa:hover {
+  background-color: #16a34a;
+}
+
+.floating-contact-main-btn {
+  padding: 0;
+  border-radius: 50%;
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s;
+}
+
+.floating-contact-main-btn:hover {
+  background-color: transparent;
+  transform: scale(1.05);
 }

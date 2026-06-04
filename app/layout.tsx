@@ -22,6 +22,7 @@ export const viewport: Viewport = {
 };
 
 import Footer from "../components/Footer";
+import FloatingContact from "../components/FloatingContact";
 
 export default function RootLayout({
   children,
@@ -33,15 +34,7 @@ export default function RootLayout({
       <body style={{ fontFamily: "var(--font-outfit), sans-serif" }}>
         {children}
         <Footer />
-        <a 
-          href="https://wa.me/917669016565" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="floating-whatsapp"
-          aria-label="Chat with us on WhatsApp"
-        >
-          <img src="/floating-Whatsapp.png" alt="WhatsApp" />
-        </a>
+        <FloatingContact />
       </body>
     </html>
 
