@@ -78,7 +78,7 @@ export default function Ecosystem() {
           <div className="eco-col eco-right">
             {/* Item 4 */}
             <div className="eco-item">
-              <div className="eco-card border-orange">
+              <div className="eco-card border-purple">
                 <img src="/Brands/travelezi.png" alt="TravelEzi" className="eco-logo-img" />
                 <span className="eco-url">www.travelezi.com</span>
                 <div className="eco-line line-tr"></div>

@@ -31,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${outfit.variable}`}>
-      <body style={{ fontFamily: "var(--font-outfit), sans-serif" }}>
+      <body suppressHydrationWarning style={{ fontFamily: "var(--font-outfit), sans-serif" }}>
         {children}
         <Footer />
         <FloatingContact />

@@ -3848,6 +3848,10 @@ body.mobile-menu-open .market-ticker-container {
   border-color: #3b82f6;
 }
 
+.eco-card.border-purple {
+  border-color: #8b5cf6;
+}
+
 .eco-logo-img {
   width: 100%;
   max-width: 130px;
