@@ -45,26 +45,6 @@ InvestEsy’s frontend is a modern, high-performance web application built with:
 
 ---
 
-## 💻 Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
----
-
 ## 🤝 Connect With Us
 
 We are here to support your wealth creation journey. Reach out to explore partnership opportunities or learn more about how we can help you grow your investments.
