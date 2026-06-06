@@ -33,6 +33,29 @@
   --transition-normal: 300ms ease;
 }
 
+::selection {
+  background-color: #a80858ea;
+  color: var(--surface);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-hover);
+}
+
+
 * {
   box-sizing: border-box;
   padding: 0;
