@@ -19,7 +19,7 @@ export default function Footer() {
               <p>BSE Star MF Membership 58341</p>
             </div>
             <div className="startup-badge mt-6">
-              <img src="/startup.png" alt="Startup India Logo" style={{ height: "45px", width: "auto" }} />
+              <img src="/startup.png" alt="Startup India Logo" style={{ height: "35px", width: "auto" }} />
             </div>
             <p className="footer-text mt-2">Startup India: DIPP94269</p>
           </div>
