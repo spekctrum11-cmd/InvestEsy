@@ -28,7 +28,7 @@ export default function Ecosystem() {
                 <span>Insurance<br />Platform</span>
               </div>
               <div className="eco-card border-orange">
-                <img src="/Brands/beemaaa.png" alt="Beeमा" className="eco-logo-img" />
+                <img src="/Brands/beemaaa_logo.png" alt="Beeमा" className="eco-logo-img" />
                 <span className="eco-url">www.beemaaa.com</span>
                 <div className="eco-line line-tl"></div>
               </div>
