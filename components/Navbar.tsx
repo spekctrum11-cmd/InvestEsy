@@ -108,7 +108,7 @@ export default function Navbar() {
         <div className="nav-item">
           <Link href="#">Investor Zone ▾</Link>
           <div className="dropdown">
-            <Link href="https://investesy.in/educational-videos/" className="service-link">
+            <Link href="/educational-videos" className="service-link">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="service-icon icon-purple"><polygon points="23 7 16 12 23 17 23 7" /><rect x="1" y="5" width="15" height="14" rx="2" ry="2" /></svg>
               Educational Videos
             </Link>
@@ -328,7 +328,7 @@ export default function Navbar() {
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className={`chevron-icon ${isInvestorZoneOpen ? "rotated" : ""}`}><polyline points="6 9 12 15 18 9"></polyline></svg>
             </button>
             <div className={`mobile-sub-menu ${isInvestorZoneOpen ? "open" : ""}`}>
-              <Link href="https://investesy.in/educational-videos/" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>
+              <Link href="/educational-videos" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="service-icon icon-purple"><polygon points="23 7 16 12 23 17 23 7" /><rect x="1" y="5" width="15" height="14" rx="2" ry="2" /></svg>
                 Educational Videos
               </Link>
