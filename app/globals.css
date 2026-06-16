@@ -1356,7 +1356,7 @@ body.mobile-menu-open .market-ticker-container {
 .mf-panel-body {
   overflow: hidden;
   height: 600px;
-  min-height: 300px;
+  min-height: 600px;
   position: relative;
   -ms-overflow-style: none;
   /* IE and Edge */
