@@ -104,10 +104,10 @@ export default function PortfolioXRay() {
                   <li style={{ marginBottom: "0.5rem" }}>
                     <b>Step 1:</b> <a href="https://www.camsonline.com/Investors/Statements/Consolidated-Account-Statement" target="_blank" rel="noopener noreferrer" style={{ color: "#F17420", fontWeight: "600", textDecoration: "none" }}>Click here</a> to request CAS.
                   </li>
-                  <li style={{ marginBottom: "0.5rem" }}><b>Step 2:</b> Choose the statement type <strong>"Detailed"</strong></li>
-                  <li style={{ marginBottom: "0.5rem" }}><b>Step 3:</b> Select <strong>"Specific period"</strong></li>
-                  <li style={{ marginBottom: "0.5rem" }}><b>Step 4:</b> Select From Date <strong>"01/04/1990"</strong> and Till Date as the <strong>current date</strong></li>
-                  <li style={{ marginBottom: "0.5rem" }}><b>Step 5:</b> In folio listing, choose <strong>"With zero balance folios"</strong></li>
+                  <li style={{ marginBottom: "0.5rem" }}><b>Step 2:</b> Choose the statement type <strong>&quot;Detailed&quot;</strong></li>
+                  <li style={{ marginBottom: "0.5rem" }}><b>Step 3:</b> Select <strong>&quot;Specific period&quot;</strong></li>
+                  <li style={{ marginBottom: "0.5rem" }}><b>Step 4:</b> Select From Date <strong>&quot;01/04/1990&quot;</strong> and Till Date as the <strong>current date</strong></li>
+                  <li style={{ marginBottom: "0.5rem" }}><b>Step 5:</b> In folio listing, choose <strong>&quot;With zero balance folios&quot;</strong></li>
                   <li style={{ marginBottom: "0.5rem" }}><b>Step 6:</b> Put your email as mentioned in the investments.</li>
                   <li style={{ marginBottom: "0.5rem" }}><b>Step 7:</b> Choose any password; this will be used to access the password-protected statement.</li>
                   <li style={{ marginBottom: "1rem" }}><b>Step 8:</b> Submit the form.</li>

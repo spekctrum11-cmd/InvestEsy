@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import MarketTicker from "@/components/MarketTicker";
 import Navbar from "@/components/Navbar";
@@ -428,7 +427,7 @@ export default function BecomeAPartner() {
               <path fill="var(--primary)" d="M929 38c-12-5-24-8-36-8l-10 8c-22-9-42-18-72-18l-28 25H217l-28-25c-31 0-51 10-72 18l-9-8c-13 0-25 3-37 8L40 50l31 13c12 5 24 7 37 7l9-8c22 9 42 18 72 18l28-25h566l28 25c31 0 51-10 72-18l10 8c12 0 24-2 36-7l31-13-31-12Z"></path>
             </svg>
             <p className="testimonials-header-desc bp-testi-desc">
-              Our Clients Say's
+              Our Clients Say’s
             </p>
           </div>
 
@@ -455,7 +454,7 @@ export default function BecomeAPartner() {
                 onClick={() => setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)}
                 style={{ cursor: "pointer", touchAction: "pan-y" }}
               >
-                <span className="t-quote-mark bp-testi-quote">"</span>
+                <span className="t-quote-mark bp-testi-quote">&quot;</span>
 
                 <p className="bp-testi-text">
                   {testimonials[currentTestimonial].text}

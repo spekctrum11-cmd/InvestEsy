@@ -32,7 +32,7 @@ export default function WhyInvestEsy() {
             
             <div className="why-text-content">
               <p>
-                We as a InvestEsy organization, empower your financial journey and pave the path to a secure and prosperous future. As a premier investment firm, we understand that your financial goals are as unique as you are. That's why we offer a comprehensive range of investment solutions tailored to your individual aspirations, risk tolerance, and timeline.
+                We as a InvestEsy organization, empower your financial journey and pave the path to a secure and prosperous future. As a premier investment firm, we understand that your financial goals are as unique as you are. That&apos;s why we offer a comprehensive range of investment solutions tailored to your individual aspirations, risk tolerance, and timeline.
               </p>
               <p>
                 We understand that managing risk is crucial to achieving long-term financial success. Our risk management strategies aim to minimize volatility and safeguard your investments against market fluctuations, ensuring a more stable journey toward your goals.

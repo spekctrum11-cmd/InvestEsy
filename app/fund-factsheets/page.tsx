@@ -30,7 +30,7 @@ export default function FundFactsheets() {
           <MFToolsSidebar />
 
           {/* Right Column: InvestWell Iframe */}
-          <div className="mf-iframe-card" style={{ '--iframe-height-desktop': '300px', '--iframe-height-mobile': '350px' } as any}>
+          <div className="mf-iframe-card" style={{ "--iframe-height-desktop": "300px", "--iframe-height-mobile": "350px" } as React.CSSProperties & { "--iframe-height-desktop": string; "--iframe-height-mobile": string }}>
             <iframe
               src="https://www.investwell.in/updation/parameter/par_factsheet.jsp?&ht=ffffff&hbg=015FAF&bt=000000&r1=dddddd&r2=f2f2f2"
               width="100%"

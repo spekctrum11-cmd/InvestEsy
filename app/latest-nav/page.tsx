@@ -30,7 +30,7 @@ export default function LatestNav() {
           <MFToolsSidebar />
 
           {/* Right Column: InvestWell Iframe */}
-          <div className="mf-iframe-card" style={{ '--iframe-height-desktop': '400px', '--iframe-height-mobile': '450px' } as any}>
+          <div className="mf-iframe-card" style={{ "--iframe-height-desktop": "400px", "--iframe-height-mobile": "450px" } as React.CSSProperties & { "--iframe-height-desktop": string; "--iframe-height-mobile": string }}>
             <iframe
               src="https://www.investwell.in/updation/parameter/par_latest_nav.jsp?src=2&hbg=cccccc&ht=111111&bt=222222&r1=eeeeee&r2=f1f1f1&fs=11"
               width="100%"

@@ -87,7 +87,7 @@ export default function Disclosure() {
                   This is on a best effort basis and rates are updated as and when actual rates are received from AMCs.
                 </p>
                 <p style={{ margin: 0 }}>
-                  We are a NISM certified / AMFI registered mutual fund distributor and not an RIA. We get compensated / incentivised by AMCs. We don't charge any fees for our services.
+                  We are a NISM certified / AMFI registered mutual fund distributor and not an RIA. We get compensated / incentivised by AMCs. We don&apos;t charge any fees for our services.
                 </p>
               </div>
             </div>

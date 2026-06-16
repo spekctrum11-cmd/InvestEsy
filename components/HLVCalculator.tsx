@@ -1,7 +1,16 @@
 "use client";
-import { useState, useMemo } from "react";
+import { useState, useMemo, type Dispatch, type SetStateAction } from "react";
 
-const CurrencyInput = ({ label, value, onChange, prefix = "₹" }: any) => (
+type CurrencyInputProps = {
+  label: string;
+  value: number;
+  onChange: (value: string) => void;
+  prefix?: string;
+};
+
+type NumericState = Record<string, number>;
+
+const CurrencyInput = ({ label, value, onChange, prefix = "₹" }: CurrencyInputProps) => (
   <div className="hlv-input-wrapper">
     <label>{label}</label>
     <div className="hlv-input-inner">
@@ -51,8 +60,8 @@ export default function HLVCalculator() {
     };
   }, [personal, assets, liabilities, inflows, assumptions]);
 
-  const handleNumber = (setter: any, field: string, val: string) => {
-    setter((prev: any) => ({ ...prev, [field]: Number(val) || 0 }));
+  const handleNumber = <T extends NumericState>(setter: Dispatch<SetStateAction<T>>, field: keyof T, val: string) => {
+    setter((prev) => ({ ...prev, [field]: Number(val) || 0 }));
   };
 
   const formatCurrency = (val: number) => {

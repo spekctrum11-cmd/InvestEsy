@@ -112,7 +112,7 @@ export default function Navbar() {
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="service-icon icon-purple"><polygon points="23 7 16 12 23 17 23 7" /><rect x="1" y="5" width="15" height="14" rx="2" ry="2" /></svg>
               Educational Videos
             </Link>
-            <Link href="https://investesy.in/sip-calculator/" className="service-link">
+            <Link href="/#financial-calculators" className="service-link">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="service-icon icon-orange"><rect x="4" y="2" width="16" height="20" rx="2" ry="2" /><line x1="8" y1="6" x2="16" y2="6" /><line x1="16" y1="14" x2="16" y2="14.01" /><line x1="12" y1="14" x2="12" y2="14.01" /><line x1="8" y1="14" x2="8" y2="14.01" /><line x1="16" y1="10" x2="16" y2="10.01" /><line x1="12" y1="10" x2="12" y2="10.01" /><line x1="8" y1="10" x2="8" y2="10.01" /></svg>
               Financial Calculators
             </Link>
@@ -120,15 +120,15 @@ export default function Navbar() {
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="service-icon icon-green"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" /></svg>
               MF Tools
             </Link>
-            <Link href="https://investesy.in/mf-forms/" className="service-link">
+            <Link href="/kyc-fatca-forms" className="service-link">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="service-icon icon-pink"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" /></svg>
               Downloads
             </Link>
-            <Link href="https://investesy.in/principles-of-investing/" className="service-link">
+            <Link href="#" className="service-link">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="service-icon icon-blue"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" /><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" /></svg>
               Principles of Investing
             </Link>
-            <Link href="https://investesy.in/open-free-demat-account/" className="service-link">
+            <Link href="/open-free-demat-account" className="service-link">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="service-icon icon-purple"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
               Open Free Demat Account
             </Link>
@@ -136,7 +136,7 @@ export default function Navbar() {
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="service-icon icon-orange"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" /><polyline points="10 9 9 9 8 9" /></svg>
               Blogs
             </Link>
-            <Link href="https://investesy.in/faqs/" className="service-link">
+            <Link href="/faqs" className="service-link">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="service-icon icon-green"><circle cx="12" cy="12" r="10" /><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>
               FAQs
             </Link>
@@ -268,11 +268,11 @@ export default function Navbar() {
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className={`chevron-icon ${isServicesOpen ? "rotated" : ""}`}><polyline points="6 9 12 15 18 9"></polyline></svg>
             </button>
             <div className={`mobile-sub-menu ${isServicesOpen ? "open" : ""}`}>
-              <Link href="https://investesy.in/mutual-funds/" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>
+              <Link href="/mutual-funds" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="service-icon icon-orange"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg>
                 Mutual Funds
               </Link>
-              <Link href="https://investesy.in/systematic-investment-plan/" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>
+              <Link href="/systematic-investment-plan" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="service-icon icon-green"><path d="M3 3v18h18" /><path d="m19 9-5 5-4-4-3 3" /></svg>
                 Systematic Investment Plan
               </Link>
@@ -280,23 +280,23 @@ export default function Navbar() {
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="service-icon icon-purple"><path d="M22 12a10.06 10.06 0 0 0-20 0Z" /><path d="M12 12v8a2 2 0 0 0 4 0" /></svg>
                 Tax Saving
               </Link>
-              <Link href="https://investesy.in/fixed-deposits/" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>
+              <Link href="/fixed-deposits" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="service-icon icon-pink"><rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
                 Fixed Deposits
               </Link>
-              <Link href="https://investesy.in/bonds/" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>
+              <Link href="/bonds" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="service-icon icon-blue"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" /><polyline points="14 2 14 8 20 8" /></svg>
                 Bonds
               </Link>
-              <Link href="https://investesy.in/nps/" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>
+              <Link href="/nps" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="service-icon icon-green"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
                 NPS
               </Link>
-              <Link href="https://investesy.in/life-insurance/" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>
+              <Link href="/life-insurance" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="service-icon icon-orange"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" /></svg>
                 Term Life Insurance
               </Link>
-              <Link href="https://investesy.in/health-insurance/" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>
+              <Link href="/health-insurance" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="service-icon icon-pink"><path d="M22 12h-4l-3 9L9 3l-3 9H2" /></svg>
                 Health Insurance
               </Link>
@@ -332,7 +332,7 @@ export default function Navbar() {
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="service-icon icon-purple"><polygon points="23 7 16 12 23 17 23 7" /><rect x="1" y="5" width="15" height="14" rx="2" ry="2" /></svg>
                 Educational Videos
               </Link>
-              <Link href="https://investesy.in/sip-calculator/" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>
+              <Link href="/#financial-calculators" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="service-icon icon-orange"><rect x="4" y="2" width="16" height="20" rx="2" ry="2" /><line x1="8" y1="6" x2="16" y2="6" /><line x1="16" y1="14" x2="16" y2="14.01" /><line x1="12" y1="14" x2="12" y2="14.01" /><line x1="8" y1="14" x2="8" y2="14.01" /><line x1="16" y1="10" x2="16" y2="10.01" /><line x1="12" y1="10" x2="12" y2="10.01" /><line x1="8" y1="10" x2="8" y2="10.01" /></svg>
                 Financial Calculators
               </Link>
@@ -340,15 +340,15 @@ export default function Navbar() {
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="service-icon icon-green"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" /></svg>
                 MF Tools
               </Link>
-              <Link href="https://investesy.in/mf-forms/" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>
+              <Link href="/kyc-fatca-forms" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="service-icon icon-pink"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" /></svg>
                 Downloads
               </Link>
-              <Link href="https://investesy.in/principles-of-investing/" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>
+              <Link href="#" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="service-icon icon-blue"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" /><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" /></svg>
                 Principles of Investing
               </Link>
-              <Link href="https://investesy.in/open-free-demat-account/" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>
+              <Link href="/open-free-demat-account" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="service-icon icon-purple"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
                 Open Free Demat Account
               </Link>
@@ -356,7 +356,7 @@ export default function Navbar() {
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="service-icon icon-orange"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" /><polyline points="10 9 9 9 8 9" /></svg>
                 Blogs
               </Link>
-              <Link href="https://investesy.in/faqs/" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>
+              <Link href="/faqs" className="mobile-sub-link" onClick={() => setIsMobileMenuOpen(false)}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="service-icon icon-green"><circle cx="12" cy="12" r="10" /><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>
                 FAQs
               </Link>

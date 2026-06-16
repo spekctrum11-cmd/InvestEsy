@@ -17,37 +17,37 @@ const videos: VideoItem[] = [
     id: "nke3160rCas",
     title: "Introduction to Mutual Funds",
     description: "Learn the fundamentals of mutual funds, how they operate, and why they are a powerful vehicle for building wealth.",
-    embedUrl: "https://www.youtube.com/embed/nke3160rCas"
+    embedUrl: "https://www.youtube-nocookie.com/embed/nke3160rCas"
   },
   {
     id: "QISY70zukng",
     title: "SIP: Systematic Investment Plans",
     description: "Discover how regular investing through SIP can help you build long-term wealth, average out purchase costs, and form a strong financial habit.",
-    embedUrl: "https://www.youtube.com/embed/QISY70zukng"
+    embedUrl: "https://www.youtube-nocookie.com/embed/QISY70zukng"
   },
   {
     id: "5ThhgoWFHyc",
     title: "Impact of Inflation on Your Savings",
     description: "Explore how inflation reduces your purchasing power over time, and why investing is crucial to beat inflation and preserve capital.",
-    embedUrl: "https://www.youtube.com/embed/5ThhgoWFHyc"
+    embedUrl: "https://www.youtube-nocookie.com/embed/5ThhgoWFHyc"
   },
   {
     id: "deaU-eVM5xs",
     title: "Term Life Insurance vs Health Insurance",
     description: "Understand the key differences between Term Life and Health Insurance, and how to balance both to ensure full family protection.",
-    embedUrl: "https://www.youtube.com/embed/deaU-eVM5xs"
+    embedUrl: "https://www.youtube-nocookie.com/embed/deaU-eVM5xs"
   },
   {
     id: "E0IsRmvkNwo",
     title: "National Pension System (NPS) Explained",
     description: "Learn how the National Pension System works, its dual benefit of retirement savings and tax deductions under Section 80CCD.",
-    embedUrl: "https://www.youtube.com/embed/E0IsRmvkNwo?list=UUbdqkbn7Bu7wpdlBJR3xINg"
+    embedUrl: "https://www.youtube-nocookie.com/embed/E0IsRmvkNwo?list=UUbdqkbn7Bu7wpdlBJR3xINg"
   },
   {
     id: "PmEhyAWcSz0",
     title: "Understanding Bonds & Fixed Income",
     description: "Explore how debt instruments and bonds work, their role in portfolio diversification, and how they offer stable interest payouts.",
-    embedUrl: "https://www.youtube.com/embed/PmEhyAWcSz0"
+    embedUrl: "https://www.youtube-nocookie.com/embed/PmEhyAWcSz0"
   }
 ];
 
@@ -106,53 +106,39 @@ export default function EducationalVideos() {
                 initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -6, boxShadow: "0 20px 40px rgba(0,0,0,0.08)" }}
+                whileHover={{ y: 0 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
+                className="video-brutal-card"
                 style={{
                   background: "#fff",
-                  borderRadius: "16px",
+                  borderRadius: "0.75rem",
                   overflow: "hidden",
-                  boxShadow: "0 4px 15px rgba(0,0,0,0.03)",
-                  border: "1px solid #eaeaea",
                   display: "flex",
                   flexDirection: "column"
                 }}
               >
                 {/* 16:9 Video Wrapper */}
-                <div style={{ position: "relative", width: "100%", paddingTop: "56.25%", background: "#000" }}>
+                <div style={{ position: "relative", width: "100%", paddingTop: "56.25%", background: "#f1f5f9", borderBottom: "2px solid rgba(15, 23, 42, 1)" }}>
                   <iframe
                     src={video.embedUrl}
                     style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: 0 }}
                     allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="strict-origin-when-cross-origin"
                     title={video.title}
                   />
+                  {/* Video Tag Badge overlay */}
+                  <span className="video-brutal-tag">Video #{idx + 1}</span>
                 </div>
 
                 {/* Video Info Block */}
-                <div style={{ padding: "1.5rem", display: "flex", flexDirection: "column", flexGrow: 1, justifyContent: "space-between" }}>
-                  <div>
-                    <h3 style={{ fontSize: "1.05rem", fontWeight: "600", color: "#193c56", margin: "0 0 0.5rem 0", lineHeight: "1.4" }}>
-                      {video.title}
-                    </h3>
-                    <p style={{ fontSize: "0.85rem", color: "#64748b", lineHeight: "1.5", margin: 0 }}>
-                      {video.description}
-                    </p>
-                  </div>
-                  
-                  {/* Subtle video tag */}
-                  <div style={{ marginTop: "1.5rem", display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                    <span style={{
-                      display: "inline-block",
-                      background: "rgba(1, 95, 175, 0.08)",
-                      color: "#015FAF",
-                      fontSize: "0.75rem",
-                      fontWeight: "600",
-                      padding: "0.25rem 0.6rem",
-                      borderRadius: "12px"
-                    }}>
-                      Video #{idx + 1}
-                    </span>
-                  </div>
+                <div style={{ padding: "1rem 1rem", display: "flex", flexDirection: "column", flexGrow: 1 }}>
+                  <h3 style={{ fontSize: "1rem", fontWeight: "800", color: "#0f172a", margin: "0 0 0.35rem 0", lineHeight: "1.3" }}>
+                    {video.title}
+                  </h3>
+                  <p style={{ fontSize: "0.8rem", color: "#64748b", lineHeight: "1.5", margin: 0 }}>
+                    {video.description}
+                  </p>
                 </div>
               </motion.div>
             ))}

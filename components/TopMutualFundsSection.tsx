@@ -1,6 +1,13 @@
 "use client";
 
-import { useState, useRef, useCallback, useEffect } from "react";
+import {
+  useState,
+  useRef,
+  useCallback,
+  useEffect,
+  type MouseEvent as ReactMouseEvent,
+  type TouchEvent as ReactTouchEvent,
+} from "react";
 
 export default function TopMutualFundsSection() {
   const [panelHeight, setPanelHeight] = useState(580);
@@ -9,56 +16,84 @@ export default function TopMutualFundsSection() {
   const isDragging = useRef(false);
   const startY = useRef(0);
   const startHeight = useRef(580);
+  const handleMouseMoveRef = useRef<(event: MouseEvent) => void>(() => {});
+  const handleTouchMoveRef = useRef<(event: TouchEvent) => void>(() => {});
+  const handlePointerUpRef = useRef<() => void>(() => {});
 
-  const handleMouseDown = (e: React.MouseEvent | React.TouchEvent) => {
+  const handleMouseMove = useCallback((event: MouseEvent) => {
+    handleMouseMoveRef.current(event);
+  }, []);
+
+  const handleTouchMove = useCallback((event: TouchEvent) => {
+    handleTouchMoveRef.current(event);
+  }, []);
+
+  const handlePointerUp = useCallback(() => {
+    handlePointerUpRef.current();
+  }, []);
+
+  const handleMouseDown = useCallback((event: ReactMouseEvent | ReactTouchEvent) => {
     isDragging.current = true;
     setIsDraggingState(true);
-    const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
+    const clientY = "touches" in event ? event.touches[0].clientY : event.clientY;
     startY.current = clientY;
     startHeight.current = panelHeight;
-    
+
     document.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mouseup", handleMouseUp);
+    document.addEventListener("mouseup", handlePointerUp);
     document.addEventListener("touchmove", handleTouchMove, { passive: false });
-    document.addEventListener("touchend", handleMouseUp);
-    
+    document.addEventListener("touchend", handlePointerUp);
+  }, [handleMouseMove, handlePointerUp, handleTouchMove, panelHeight]);
+
+  useEffect(() => {
+    handleMouseMoveRef.current = (event: MouseEvent) => {
+      if (!isDragging.current) return;
+      const deltaY = event.clientY - startY.current;
+      setPanelHeight(Math.max(200, startHeight.current + deltaY));
+    };
+  }, []);
+
+  useEffect(() => {
+    handleTouchMoveRef.current = (event: TouchEvent) => {
+      if (!isDragging.current) return;
+      const deltaY = event.touches[0].clientY - startY.current;
+      setPanelHeight(Math.max(200, startHeight.current + deltaY));
+    };
+  }, []);
+
+  useEffect(() => {
+    handlePointerUpRef.current = () => {
+      isDragging.current = false;
+      setIsDraggingState(false);
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseup", handlePointerUp);
+      document.removeEventListener("touchmove", handleTouchMove);
+      document.removeEventListener("touchend", handlePointerUp);
+    };
+  }, [handleMouseMove, handlePointerUp, handleTouchMove]);
+
+  useEffect(() => {
+    if (!isDraggingState) return;
+
+    const previousUserSelect = document.body.style.userSelect;
+    const previousCursor = document.body.style.cursor;
     document.body.style.userSelect = "none";
     document.body.style.cursor = "ns-resize";
-  };
 
-  const handleMouseMove = useCallback((e: MouseEvent) => {
-    if (!isDragging.current) return;
-    const deltaY = e.clientY - startY.current;
-    setPanelHeight(Math.max(200, startHeight.current + deltaY));
-  }, []);
-
-  const handleTouchMove = useCallback((e: TouchEvent) => {
-    if (!isDragging.current) return;
-    const deltaY = e.touches[0].clientY - startY.current;
-    setPanelHeight(Math.max(200, startHeight.current + deltaY));
-  }, []);
-
-  const handleMouseUp = useCallback(() => {
-    isDragging.current = false;
-    setIsDraggingState(false);
-    document.removeEventListener("mousemove", handleMouseMove);
-    document.removeEventListener("mouseup", handleMouseUp);
-    document.removeEventListener("touchmove", handleTouchMove);
-    document.removeEventListener("touchend", handleMouseUp);
-    document.body.style.userSelect = "";
-    document.body.style.cursor = "";
-  }, [handleMouseMove, handleTouchMove]);
+    return () => {
+      document.body.style.userSelect = previousUserSelect;
+      document.body.style.cursor = previousCursor;
+    };
+  }, [isDraggingState]);
 
   useEffect(() => {
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseup", handleMouseUp);
+      document.removeEventListener("mouseup", handlePointerUp);
       document.removeEventListener("touchmove", handleTouchMove);
-      document.removeEventListener("touchend", handleMouseUp);
-      document.body.style.userSelect = "";
-      document.body.style.cursor = "";
+      document.removeEventListener("touchend", handlePointerUp);
     };
-  }, [handleMouseMove, handleMouseUp, handleTouchMove]);
+  }, [handleMouseMove, handlePointerUp, handleTouchMove]);
 
   return (
     <section className="top-mf-section">

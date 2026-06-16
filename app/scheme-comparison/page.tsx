@@ -30,7 +30,7 @@ export default function SchemeComparison() {
           <MFToolsSidebar />
 
           {/* Right Column: InvestWell Iframe */}
-          <div className="mf-iframe-card" style={{ '--iframe-height-desktop': '350px', '--iframe-height-mobile': '400px' } as any}>
+          <div className="mf-iframe-card" style={{ "--iframe-height-desktop": "350px", "--iframe-height-mobile": "400px" } as React.CSSProperties & { "--iframe-height-desktop": string; "--iframe-height-mobile": string }}>
             <iframe
               src="https://investwell.in/updation/parameter/par_fund_compare_big.jsp?hbg=cccccc&ht=111111&bt=222222&ff=verdana&fs=12"
               width="100%"

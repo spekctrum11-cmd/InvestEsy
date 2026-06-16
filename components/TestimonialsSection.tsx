@@ -53,7 +53,7 @@ export default function TestimonialsSection() {
           </h2>
           <div className="animated-underline"></div>
           <p className="testimonials-header-desc" style={{ marginTop: "1rem" }}>
-            Don't just take our word for it. Here is what our clients have to say.
+            Don&apos;t just take our word for it. Here is what our clients have to say.
           </p>
         </div>
 
@@ -61,7 +61,7 @@ export default function TestimonialsSection() {
         <div className="testimonials-desktop-grid">
           {testimonialsData.map((card) => (
             <div key={card.id} className="t-card" style={{ background: card.bg }}>
-              <span className="t-quote-mark">"</span>
+              <span className="t-quote-mark">&quot;</span>
               <div style={{ position: 'relative', zIndex: 10 }}>
                 <p className="t-text">
                   {card.text}
@@ -122,7 +122,7 @@ export default function TestimonialsSection() {
                   cursor: isFront ? 'grab' : 'default'
                 }}
               >
-                <span className="t-quote-mark">"</span>
+              <span className="t-quote-mark">&quot;</span>
                 
                 <div style={{ position: 'relative', zIndex: 10 }}>
                   <p className="t-text" style={{ marginBottom: '1.5rem', marginTop: '1rem' }}>

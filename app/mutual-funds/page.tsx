@@ -154,7 +154,7 @@ export default function MutualFundsPage() {
                     <h3 style={{ fontSize: "1.05rem", fontWeight: "600", color: "#000", margin: 0 }}>Diversification</h3>
                   </div>
                   <p style={{ fontSize: "0.85rem", color: "#000", lineHeight: "1.5", margin: 0 }}>
-                    By holding "shares," also called "units," in a mutual fund rather than buying individual stocks or bonds, you spread out your risk. Diversification means investing in various assets so that any loss in one investment is offset by gains in others. In short, the more stocks and bonds you own, the less impact any single one of them can have on your overall investment.
+                    By holding &quot;shares,&quot; also called &quot;units,&quot; in a mutual fund rather than buying individual stocks or bonds, you spread out your risk. Diversification means investing in various assets so that any loss in one investment is offset by gains in others. In short, the more stocks and bonds you own, the less impact any single one of them can have on your overall investment.
                   </p>
                 </div>
 
