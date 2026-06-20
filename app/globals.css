@@ -293,7 +293,7 @@ h6 {
 }
 
 .nav-logo-img {
-  height: 22px;
+  height: 42px;
   /* Decreased size for desktop readability */
   width: auto;
   display: block;
@@ -402,7 +402,7 @@ body.mobile-menu-open .market-ticker-container {
 
 @media (max-width: 1024px) {
   .nav-logo-img {
-    height: 20px;
+    height: 35px;
     /* Decreased size only for phone and tab */
   }
 }
@@ -2234,8 +2234,11 @@ body.mobile-menu-open .market-ticker-container {
 }
 
 .footer-logo-img {
-  height: 30px;
+  height: 120px;
+  border-radius: 10px;
+  padding: 0.3rem 1rem;
   width: auto;
+  background-color: #fff;
   display: block;
   object-fit: contain;
 }

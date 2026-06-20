@@ -12,7 +12,7 @@ export default function Footer() {
           {/* Column 1: Branding & Registration */}
           <div className="footer-col">
             <div className="footer-logo">
-              <img src="/investesy-logo.png" alt="InvestEsy Logo" className="footer-logo-img" />
+              <img src="/new-astro.png" alt="InvestEsy Logo" className="footer-logo-img" />
             </div>
             <div className="footer-text mt-4">
               <p>AMFI Registration ARN-270606</p>

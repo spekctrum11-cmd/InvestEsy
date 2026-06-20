@@ -49,7 +49,7 @@ export default function Navbar() {
     <nav className={`navbar container flex justify-between items-center ${isScrolled ? "scrolled" : ""} ${isMobileMenuOpen ? "mobile-menu-active" : ""}`}>
       <div className="logo">
         <Link href="/">
-          <img src="/investesy-logo.png" alt="InvestEsy Logo" className="nav-logo-img" />
+          <img src="/new-astro.png" alt="InvestEsy Logo" className="nav-logo-img" />
         </Link>
       </div>
 
