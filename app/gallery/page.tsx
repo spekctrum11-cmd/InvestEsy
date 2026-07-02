@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import MarketTicker from "@/components/MarketTicker";
+import Image from "next/image";
 
 const images = [
   "Gallery-1.jpg", "Gallery-2.jpg", "Gallery-3.jpg", "Gallery-4.jpg",
@@ -14,10 +15,10 @@ const images = [
   "WhatsApp-Image-2024-11-05-at-3.23.07-PM.jpeg"
 ];
 
-// Placeholder locations for the "Where" option
-const locations = [
-  "Delhi Head Office", "Annual Summit", "Team Outing", "Awards Ceremony", "Client Meet"
-];
+// Placeholder locations for the "Where" option (commented out to resolve unused lint warning)
+// const locations = [
+//   "Delhi Head Office", "Annual Summit", "Team Outing", "Awards Ceremony", "Client Meet"
+// ];
 
 const itemTypes = [
   "large", "standard", "standard", "wide", "standard",
@@ -125,10 +126,11 @@ export default function GalleryPage() {
                 onClick={() => setSelectedImage(src)}
               >
                 <div className="gallery-image-wrapper-bento">
-                  <img
+                  <Image
                     src={`/Gallery/${src}`}
                     alt={`Real Fincorp Gallery ${index + 1}`}
-                    loading="lazy"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="gallery-img-bento"
                   />
 

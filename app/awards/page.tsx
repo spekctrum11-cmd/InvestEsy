@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import MarketTicker from "@/components/MarketTicker";
+import Image from "next/image";
 
 const featuredAward = {
   imageFile: "Awards-7.jpg",
@@ -157,11 +158,13 @@ export default function AwardsPage() {
             className="award-featured-img-wrapper"
             onClick={() => setSelectedImage(featuredAward.imageFile)}
           >
-            <img
+            <Image
               src={`/awards/${featuredAward.imageFile}`}
               alt={featuredAward.alt}
-              loading="lazy"
+              fill
+              sizes="(max-width: 992px) 100vw, 50vw"
               className="award-featured-img"
+              priority
             />
             <div className="award-featured-overlay">
               <div className="award-zoom-icon">
@@ -202,10 +205,11 @@ export default function AwardsPage() {
                   className="award-img-wrapper"
                   onClick={() => setSelectedImage(award.imageFile)}
                 >
-                  <img
+                  <Image
                     src={`/awards/${award.imageFile}`}
                     alt={award.alt}
-                    loading="lazy"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="award-img"
                   />
                   <div className="award-overlay">

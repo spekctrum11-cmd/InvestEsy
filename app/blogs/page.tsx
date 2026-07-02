@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import MarketTicker from "@/components/MarketTicker";
+import Image from "next/image";
 import { blogs } from "@/data/blogsData";
 
 export default function BlogsPage() {
@@ -80,7 +81,7 @@ export default function BlogsPage() {
               {featuredBlogs.map((blog) => (
                 <Link key={blog.id} href={`/blog/${blog.slug}`} className="blog-card" style={{ textDecoration: 'none', color: 'inherit' }}>
                   <div className="blog-image-wrapper">
-                    <img src={blog.image} alt={blog.title} loading="lazy" />
+                    <Image src={blog.image} alt={blog.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover" />
                     <span className="blog-category-tag">{blog.category}</span>
                   </div>
                   <div className="blog-content">
@@ -117,7 +118,7 @@ export default function BlogsPage() {
               {currentPosts.map((blog) => (
                 <Link key={blog.id} href={`/blog/${blog.slug}`} className="blog-card" style={{ textDecoration: 'none', color: 'inherit' }}>
                   <div className="blog-image-wrapper">
-                    <img src={blog.image} alt={blog.title} loading="lazy" />
+                    <Image src={blog.image} alt={blog.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover" />
                     <span className="blog-category-tag">{blog.category}</span>
                   </div>
                   <div className="blog-content">
