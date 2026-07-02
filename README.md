@@ -51,5 +51,11 @@ We are here to support your wealth creation journey. Reach out to explore partne
 
 *Investments are subject to market risks. Read all scheme related documents carefully.*
 
+---
 
-testing
+## 🔄 Git Workflow & CI/CD
+
+We follow a structured branching and verification process:
+- **Branching Strategy:** We use GitHub Flow. Refer to the [Git Workflow Guide](file:///c:/Users/Spekctrum/Desktop/InvestEsy/docs/git_workflow.md) for detailed naming conventions and coding rules.
+- **Commit Messages:** We follow Conventional Commits (e.g., `feat:`, `fix:`).
+- **CI/CD Checks:** A GitHub Actions workflow automatically verifies ESLint guidelines and build integrity on all pushes and PRs to `main`.
