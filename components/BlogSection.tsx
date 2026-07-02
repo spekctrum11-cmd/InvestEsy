@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { blogs } from "@/data/blogsData";
 
 export default function BlogSection() {
@@ -42,7 +43,7 @@ export default function BlogSection() {
           {recentBlogs.map((blog) => (
             <Link href={`/blog/${blog.slug}`} key={blog.id} className="blog-card" style={{ textDecoration: 'none', color: 'inherit' }}>
               <div className="blog-image-wrapper">
-                <img src={blog.image} alt={blog.title} loading="lazy" />
+                <Image src={blog.image} alt={blog.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover" />
                 <span className="blog-category-tag">{blog.category}</span>
               </div>
               <div className="blog-content">
@@ -75,7 +76,7 @@ export default function BlogSection() {
             {/* Featured Card */}
             <Link href={`/blog/${recentBlogs[0].slug}`} className="blog-card blog-featured" style={{ textDecoration: 'none', color: 'inherit' }}>
               <div className="blog-image-wrapper">
-                <img src={recentBlogs[0].image} alt={recentBlogs[0].title} loading="lazy" />
+                <Image src={recentBlogs[0].image} alt={recentBlogs[0].title} fill sizes="(max-width: 768px) 100vw, 100vw" className="object-cover" />
                 <span className="blog-category-tag">{recentBlogs[0].category}</span>
               </div>
               <div className="blog-content">
@@ -103,7 +104,7 @@ export default function BlogSection() {
             {recentBlogs.slice(1).map((blog) => (
               <Link href={`/blog/${blog.slug}`} key={blog.id} className="blog-card blog-strip" style={{ textDecoration: 'none', color: 'inherit' }}>
                 <div className="blog-strip-image">
-                  <img src={blog.image} alt={blog.title} loading="lazy" />
+                  <Image src={blog.image} alt={blog.title} fill sizes="(max-width: 768px) 120px, 120px" className="object-cover" />
                   <span className="blog-category-tag blog-strip-tag">{blog.category}</span>
                 </div>
                 <div className="blog-strip-content">

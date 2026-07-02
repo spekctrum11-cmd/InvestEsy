@@ -12,16 +12,16 @@ export default function AppDownloadSection() {
           <h3 className="app-download-subtitle">Download the App Now!</h3>
           <div className="app-store-buttons">
             <Link href="https://play.google.com/store/apps/details?id=com.realfincorp.spectrum.app" target="_blank" className="store-btn">
-              <img src="/playstore.png" alt="Get it on Google Play" className="store-img" />
+              <Image src="/playstore.png" alt="Get it on Google Play" width={165} height={46} className="store-img" />
             </Link>
             <Link href="https://apps.apple.com/in/app/investesy/id6744967804" target="_blank" className="store-btn">
-              <img src="/appStore.png" alt="Download on the App Store" className="store-img" />
+              <Image src="/appStore.png" alt="Download on the App Store" width={165} height={46} className="store-img" />
             </Link>
           </div>
         </div>
         <div className="app-download-image-wrapper">
           <div className="phone-container">
-            <img src="/deviceWithApplication.png" alt="InvestEsy Mobile App" className="app-download-device" />
+            <Image src="/deviceWithApplication.png" alt="InvestEsy Mobile App" width={350} height={400} className="app-download-device" style={{ width: "100%", height: "auto" }} />
           </div>
         </div>
       </div>

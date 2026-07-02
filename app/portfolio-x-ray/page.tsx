@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import MarketTicker from "@/components/MarketTicker";
 import Navbar from "@/components/Navbar";
+import Image from "next/image";
 
 export default function PortfolioXRay() {
   const [formData, setFormData] = useState({
@@ -97,7 +98,7 @@ export default function PortfolioXRay() {
                   <h2 style={{ fontSize: "1.2rem", fontWeight: "700", color: "var(--foreground)", margin: 0 }}>
                     Steps to request your CAS
                   </h2>
-                  <img src="/cams.jpg" alt="CAMS" style={{ height: "45px", width: "auto", objectFit: "contain", borderRadius: "6px" }} />
+                  <Image src="/cams.jpg" alt="CAMS" width={100} height={45} style={{ height: "45px", width: "auto", objectFit: "contain", borderRadius: "6px" }} />
                 </div>
                 
                 <ol style={{ paddingLeft: "1.2rem", color: "var(--text-muted)", fontSize: "0.88rem", lineHeight: "1.8" }}>
