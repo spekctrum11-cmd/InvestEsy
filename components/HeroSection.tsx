@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 
 export default function HeroSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -174,7 +175,7 @@ export default function HeroSection() {
                 {services.map((service, idx) => (
                   <div key={idx} className="service-item">
                     <div className="feature-icon-wrapper" style={{ overflow: 'hidden', padding: '6px' }}>
-                      <img src={service.img} alt={service.title} style={{ width: '56px', height: '56px', objectFit: 'contain' }} />
+                      <Image src={service.img} alt={service.title} width={56} height={56} style={{ objectFit: 'contain' }} />
                     </div>
                     <span className="feature-title">{service.title}</span>
                   </div>
@@ -184,7 +185,7 @@ export default function HeroSection() {
                 {services.map((service, idx) => (
                   <div key={`dup-${idx}`} className="service-item">
                     <div className="feature-icon-wrapper" style={{ overflow: 'hidden', padding: '6px' }}>
-                      <img src={service.img} alt={service.title} style={{ width: '56px', height: '56px', objectFit: 'contain' }} />
+                      <Image src={service.img} alt={service.title} width={56} height={56} style={{ objectFit: 'contain' }} />
                     </div>
                     <span className="feature-title">{service.title}</span>
                   </div>
