@@ -4,7 +4,6 @@ import React from "react";
 import MarketTicker from "@/components/MarketTicker";
 import Navbar from "@/components/Navbar";
 import MFToolsSidebar from "@/components/MFToolsSidebar";
-import PastSipCalculator from "@/components/PastSipCalculator";
 
 export default function PastSipPerformance() {
   return (
