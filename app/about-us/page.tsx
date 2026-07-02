@@ -4,6 +4,7 @@ import React from "react";
 import MarketTicker from "@/components/MarketTicker";
 import Navbar from "@/components/Navbar";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function AboutUs() {
   return (
@@ -46,10 +47,12 @@ export default function AboutUs() {
             </p>
           </div>
           <div className="about-image-block">
-            <img
+            <Image
               src="/about-us/a1.jpg"
               alt="About InvestEsy"
               className="about-image"
+              width={600}
+              height={400}
             />
           </div>
         </motion.div>
@@ -65,10 +68,12 @@ export default function AboutUs() {
           className="about-grid about-grid-reverse"
         >
           <div className="about-image-block">
-            <img
+            <Image
               src="/about-us/a2.jpg"
               alt="About InvestEsy Mission"
               className="about-image"
+              width={600}
+              height={400}
             />
           </div>
           <div className="about-text-block">

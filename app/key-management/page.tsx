@@ -4,6 +4,7 @@ import React from "react";
 import MarketTicker from "@/components/MarketTicker";
 import Navbar from "@/components/Navbar";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const teamMembers = [
   {
@@ -51,10 +52,12 @@ export default function KeyManagement() {
               transition={{ duration: 0.5, delay: i * 0.15 }}
             >
               <div className="km-card-image-wrapper">
-                <img
+                <Image
                   src={member.image}
                   alt={member.name}
                   className="km-card-image"
+                  width={220}
+                  height={220}
                 />
               </div>
               <div className="km-card-body">

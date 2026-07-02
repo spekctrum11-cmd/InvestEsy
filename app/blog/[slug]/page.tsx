@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import MarketTicker from "@/components/MarketTicker";
@@ -98,8 +99,8 @@ export default async function BlogPostPage({ params }: PageProps) {
         </header>
 
         {/* Featured Cover Banner */}
-        <div className="premium-article-banner">
-          <img src={post.image} alt={post.title} />
+        <div className="premium-article-banner" style={{ position: "relative" }}>
+          <Image src={post.image} alt={post.title} fill sizes="(max-width: 1200px) 100vw, 1200px" className="object-cover" priority />
         </div>
 
         {/* Body Content */}
