@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -12,14 +13,14 @@ export default function Footer() {
           {/* Column 1: Branding & Registration */}
           <div className="footer-col">
             <div className="footer-logo">
-              <img src="/new-astro.png" alt="InvestEsy Logo" className="footer-logo-img" />
+              <Image src="/new-astro.png" alt="InvestEsy Logo" width={160} height={120} className="footer-logo-img" style={{ width: "auto", height: "120px" }} />
             </div>
             <div className="footer-text mt-4">
               <p>AMFI Registration ARN-270606</p>
               <p>BSE Star MF Membership 58341</p>
             </div>
             <div className="startup-badge mt-6">
-              <img src="/startup.png" alt="Startup India Logo" style={{ height: "35px", width: "auto" }} />
+              <Image src="/startup.png" alt="Startup India Logo" width={150} height={35} style={{ height: "35px", width: "auto" }} />
             </div>
             <p className="footer-text mt-2">Startup India: DIPP94269</p>
           </div>

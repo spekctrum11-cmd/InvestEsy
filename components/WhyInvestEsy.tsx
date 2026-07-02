@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 
 export default function WhyInvestEsy() {
   return (
@@ -10,10 +11,12 @@ export default function WhyInvestEsy() {
           
           <div className="why-investesy-image-col animate-fade-in">
             <div className="why-image-wrapper">
-              <img 
+              <Image 
                 src="/about_us.jpg" 
                 alt="About InvestEsy" 
                 className="why-image"
+                width={600}
+                height={450}
               />
               <div className="why-image-glow"></div>
             </div>

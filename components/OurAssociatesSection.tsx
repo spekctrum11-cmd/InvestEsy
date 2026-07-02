@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 const AMC_LOGOS = [
   "axis.png", "bank-of-india.jpg", "birla.png", "bnp-paribas.jpg", "canara-robeco-mf.png", 
   "dsp.png", "edelweiss-mf.png", "FranklinTempleton.png", "hdfc-logo.png", "hsbc.png", 
@@ -65,12 +67,14 @@ export default function OurAssociatesSection() {
         <div className="associates-marquee-container">
           <div className="associates-marquee-track">
             {logosToRender.map((logo, index) => (
-              <img 
+              <Image 
                 key={index}
                 src={`https://resources.investwellonline.com/websiteitem/amc-logos-new/${logo}`}
                 alt="AMC Logo"
                 className="associates-logo"
-                loading="lazy"
+                width={120}
+                height={32}
+                unoptimized
               />
             ))}
           </div>

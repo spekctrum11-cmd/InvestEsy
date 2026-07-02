@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -49,7 +50,7 @@ export default function Navbar() {
     <nav className={`navbar container flex justify-between items-center ${isScrolled ? "scrolled" : ""} ${isMobileMenuOpen ? "mobile-menu-active" : ""}`}>
       <div className="logo">
         <Link href="/">
-          <img src="/new-astro.png" alt="InvestEsy Logo" className="nav-logo-img" />
+          <Image src="/new-astro.png" alt="InvestEsy Logo" width={160} height={42} className="nav-logo-img" style={{ width: "auto", height: "42px" }} />
         </Link>
       </div>
 
