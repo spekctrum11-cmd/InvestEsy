@@ -148,7 +148,7 @@ export default function HeroSection() {
     <section className="hero">
       <div className="container">
         <div className="animate-fade-in">
-          <div className="badge">✨ #Simple Hassle Free Investment</div>
+          <div className="badge">✨(wow) #Simple Hassle Free Investment</div>
           <h1>
             Smart Mutual Fund<br />Investing Made Simple
           </h1>
