@@ -2,7 +2,8 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Phone, MessageCircle, X } from "lucide-react";
+import { Phone, MessageCircle } from "lucide-react";
+import Image from "next/image";
 
 const FloatingContact = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -63,9 +64,9 @@ const FloatingContact = () => {
         className="floating-contact-main-btn"
       >
         {isOpen ? (
-          <img src="/cross_391116.png" alt="Close" style={{ width: "60px", height: "60px", objectFit: "contain" }} />
+          <Image src="/cross_391116.png" alt="Close" width={60} height={60} style={{ objectFit: "contain" }} />
         ) : (
-          <img src="/phone_874555.png" alt="Contact" style={{ width: "60px", height: "60px", objectFit: "contain" }} />
+          <Image src="/phone_874555.png" alt="Contact" width={60} height={60} style={{ objectFit: "contain" }} />
         )}
       </button>
     </div>
