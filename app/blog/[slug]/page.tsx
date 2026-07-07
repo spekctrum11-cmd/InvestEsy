@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import MarketTicker from "@/components/MarketTicker";
 import { blogs } from "@/data/blogsData";
 import { Metadata } from "next";
+import ShareButtons from "../../../components/ShareButtons";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -72,19 +73,29 @@ export default async function BlogPostPage({ params }: PageProps) {
 
       <article className="premium-article-wrap animate-fade-in">
         {/* Back Link */}
-        <Link href="/blogs" className="premium-article-back">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="19" y1="12" x2="5" y2="12"></line>
-            <polyline points="12 19 5 12 12 5"></polyline>
-          </svg>
-          Back to Insights
-        </Link>
+        <nav className="article-breadcrumb">
+          <Link href="/" className="breadcrumb-link">
+            Home
+          </Link>
+
+          <span className="breadcrumb-separator">&gt;</span>
+
+          <Link href="/blogs" className="breadcrumb-link">
+            Blog
+          </Link>
+
+          <span className="breadcrumb-separator">&gt;</span>
+
+          <span className="breadcrumb-current">
+            {post.title}
+          </span>
+        </nav>
 
         {/* Header */}
         <header className="premium-article-header">
           <div className="premium-article-cat-badge">{post.category}</div>
           <h1 className="premium-article-title">{post.title}</h1>
-          
+
           <div className="premium-article-author-card">
             <div className="premium-article-avatar">IE</div>
             <div className="premium-article-author-info">
@@ -104,10 +115,18 @@ export default async function BlogPostPage({ params }: PageProps) {
         </div>
 
         {/* Body Content */}
-        <div 
+        <div
           className="premium-prose"
           dangerouslySetInnerHTML={{ __html: cleanContent }}
         />
+
+        {/* Share Section */}
+        <div className="mt-16 pt-10 border-t border-slate-200">
+          <ShareButtons
+            url={`${process.env.NEXT_APP_URL}/blog/${post.slug}`}
+            title={post.title}
+          />
+        </div>
       </article>
     </main>
   );

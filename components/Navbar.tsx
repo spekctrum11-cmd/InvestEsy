@@ -49,7 +49,14 @@ export default function Navbar() {
   return (
     <nav className={`navbar container flex justify-between items-center ${isScrolled ? "scrolled" : ""} ${isMobileMenuOpen ? "mobile-menu-active" : ""}`}>
       <div className="logo">
-        <Link href="/">
+        <Link href="/"
+          onClick={(e) => {
+            if (window.location.pathname === "/") {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+          }
+          }>
           <Image src="/new-astro.png" alt="InvestEsy Logo" width={160} height={42} className="nav-logo-img" style={{ width: "auto", height: "42px" }} />
         </Link>
       </div>

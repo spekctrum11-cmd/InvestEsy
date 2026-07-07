@@ -5443,17 +5443,24 @@ body.mobile-menu-open .market-ticker-container {
 }
 
 .premium-article-title {
-  font-size: clamp(1.8rem, 4.5vw, 2.75rem);
-  font-weight: 800;
-  color: #0f172a;
-  line-height: 1.15;
+
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.08;
   letter-spacing: -0.04em;
-  margin-bottom: 1.25rem;
+  color: #0f172a;
+
+  max-width: 900px;
+  margin: 0 auto 1.75rem;
+  text-align: center;
+
+  text-wrap: balance;
 }
 
 .premium-article-author-card {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.75rem;
   margin-bottom: 1.5rem;
   padding-bottom: 1.5rem;
@@ -7634,4 +7641,257 @@ a.blog-card * {
     padding: 0.9rem;
     font-size: 0.9rem;
   }
+}
+
+
+/*share this article css*/
+
+/* ===========================
+   Share Article
+=========================== */
+
+.share-article {
+  margin: 4rem auto;
+  text-align: center;
+}
+
+.share-title {
+  margin-bottom: 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.share-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.share-btn {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  border: 1px solid #e2e8f0;
+
+  background: #fff;
+  color: #64748b;
+
+  cursor: pointer;
+
+  transition:
+    transform .35s ease,
+    background .35s ease,
+    color .35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease;
+
+  box-shadow:
+    0 6px 16px rgba(15, 23, 42, .06);
+}
+
+.share-btn svg {
+  transition: transform .35s ease;
+}
+
+.share-btn:hover {
+  transform: translateY(-6px) scale(1.05);
+  color: #fff;
+  box-shadow:
+    0 15px 30px rgba(15, 23, 42, .15);
+}
+
+.share-btn:hover svg {
+  transform: scale(1.1);
+}
+
+/* Brand Colors */
+
+.share-btn.x:hover {
+  background: #000;
+  border-color: #000;
+}
+
+.share-btn.linkedin:hover {
+  background: #0077b5;
+  border-color: #0077b5;
+}
+
+.share-btn.whatsapp:hover {
+  background: #25d366;
+  border-color: #25d366;
+}
+
+.share-btn.copy {
+  background: #f8fafc;
+}
+
+.share-btn.copy:hover {
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+/* Active Click */
+
+.share-btn:active {
+  transform: scale(.95);
+}
+
+/* Keyboard Accessibility */
+
+.share-btn:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, .3);
+  outline-offset: 4px;
+}
+
+/* Material Icon */
+
+.share-btn .material-symbols-outlined {
+  font-size: 22px;
+}
+
+/* Mobile */
+
+@media (max-width: 640px) {
+
+  .share-icons {
+    gap: .8rem;
+  }
+
+  .share-btn {
+    width: 46px;
+    height: 46px;
+  }
+}
+
+/* ==========================================
+   Premium Breadcrumb
+========================================== */
+
+.article-breadcrumb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin: 16px 0 20px;
+  /* top right/left bottom */
+
+  padding: 0;
+
+  line-height: 1.3;
+}
+
+/* Links */
+
+.breadcrumb-link {
+
+  color: #64748b;
+
+  text-decoration: none;
+
+  font-weight: 500;
+
+  transition:
+    color .25s ease,
+    transform .25s ease;
+
+}
+
+.breadcrumb-link:hover {
+
+  color: #2563eb;
+
+  transform: translateY(-2px);
+
+}
+
+/* Separator */
+
+.breadcrumb-separator {
+
+  color: #cbd5e1;
+
+  user-select: none;
+
+}
+
+/* Current Page */
+
+.breadcrumb-current {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 16px;
+
+  border-radius: 999px;
+
+  background: linear-gradient(135deg, #eff6ff, #dbeafe);
+  border: 1px solid #bfdbfe;
+
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+
+  /* IMPORTANT */
+  max-width: none;
+  width: fit-content;
+
+  white-space: nowrap;
+
+  transition: .3s ease;
+}
+
+/* Nice Glow */
+
+.breadcrumb-current:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 0 14px rgba(37, 99, 235, .25),
+    0 10px 30px rgba(37, 99, 235, .12);
+
+}
+
+/* Mobile */
+
+@media (max-width:768px) {
+
+  .article-breadcrumb {
+
+    justify-content: flex-start;
+
+    gap: 8px;
+
+    font-size: 13px;
+
+  }
+
+  .breadcrumb-current {
+
+    flex-basis: 100%;
+
+    max-width: 100%;
+
+    white-space: normal;
+
+    padding: 8px 12px;
+
+    line-height: 1.45;
+
+  }
+
 }
